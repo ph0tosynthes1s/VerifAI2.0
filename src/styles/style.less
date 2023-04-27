@@ -1,0 +1,4857 @@
+@font-face {
+    font-family:'SourceCodePro';
+    font-weight: 400;
+    src: url(/src/fonts/SourceCodePro-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family:'SourceCodePro';
+    font-weight: 500;
+    src: url(/src/fonts/SourceCodePro-Medium.ttf) format("truetype");
+}
+
+@font-face {
+    font-family:'SourceCodePro';
+    font-weight: 600;
+    src: url(/src/fonts/SourceCodePro-SemiBold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family:'SourceCodePro';
+    font-weight: 800;
+    src: url(/src/fonts/SourceCodePro-ExtraBold.ttf) format("truetype");
+}
+
+html,body{
+    margin: 0 auto;
+    padding: 0;
+}
+body{
+    overflow-x: hidden;
+}
+
+.container {
+    width: 80vw;
+    margin: 0 auto;
+}
+
+p{
+    margin: 0 ;
+    padding: 0;
+}
+
+h1,h2{
+    margin: 0 ;
+    padding: 0;
+}
+
+button{
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+a{
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-decoration: none;
+    font-family: 'SourceCodePro';
+    font-weight: 500;
+}
+
+.header{
+    background-color: transparent;
+    position: fixed;
+    margin: 0 auto;
+    margin-top: 34px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    mix-blend-mode: difference;
+    .container_header{
+        display: flex;
+        align-items: center;
+        margin: 0px 25px 0px 25px;
+    }
+    &__logo{
+        width: 25vw;
+    }
+    &__menu{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        &-item{
+            display: inline-block;
+            margin-right: 74px;
+            &-link{
+                position: relative;
+                &-pic{
+                    left: -30px;
+                    top: 6px;
+                    position: absolute;
+                    opacity: 0;
+                    transition: 0.3s;
+                }
+                &:hover{
+                    .header__menu-item-link-pic{     
+                        opacity: 1;
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.main{
+    background: url(/src/img/background.png);
+    background-size: cover;
+    background-repeat:no-repeat;
+    height: 100vh;
+    position: relative;
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 121px;
+        &-title{
+            color: white;
+            font-family: 'SourceCodePro';
+            font-weight: 800;
+            font-size: 64px;
+            line-height: 98px;
+            -webkit-text-stroke:2px rgba(192, 124, 245, 0.7);
+            &-span{
+                font-size: 96px;
+                -webkit-text-stroke:2px rgba(192, 124, 245, 0.7);
+                color: transparent;
+            }
+        }
+        
+    }
+    &__bottom{
+        position: absolute;
+        bottom: 10px;
+        text-align: center;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        &-button{
+            &-txt{
+                color: white;
+                font-family: 'SourceCodePro';
+                font-weight: 500;
+                margin-bottom:12px;
+            }
+        }
+    }
+}
+
+.about{
+    height: 100vh;
+    background: linear-gradient(180deg, #0F1217 30.21%, #1D2229 100%);
+    &__title{
+        font-family:'SourceCodePro';
+        font-size: 36px;
+        line-height: 98px;
+        color: #8B6AFC;
+        font-weight: 500;
+        padding-top:55px;
+        text-align: right;
+    }
+    &__content{
+        margin-top: 14vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &-txt{
+            font-family:'SourceCodePro';
+            font-weight: 400;
+            color: #FFFFFF;
+            width: 582px;
+            line-height: 34px;
+        }
+    }
+}
+
+.app{
+    height: 95vh;
+    background: #F8F8F8;
+    position: relative;
+    &__right{
+        margin-left: 160px;
+    }
+    &__title{
+        font-family:'SourceCodePro';
+        font-size: 36px;
+        line-height: 98px;
+        color: #8B6AFC;
+        font-weight: 500;
+        padding-top:55px;
+        text-align: left;
+
+    }
+    &__hand{
+        position: absolute;
+        top: 0px;
+        right: -5vw;
+        z-index: 0;
+        transition: 0.5s;
+    }
+    &__content{
+        display: flex;
+        align-items: center;
+        position: relative;
+        &-block{
+            width: 460px;
+            margin-top:18px;
+            &-title{
+                font-family: 'SourceCodePro';
+                color: black;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 98px;
+            }
+            &-txt{
+                font-family:'SourceCodePro';
+                font-weight: 400;
+                color: black;
+                width: 582px;
+                line-height: 34px;
+            }
+
+        }
+        &-button{
+            display: flex;
+            border: 1px solid #8B6AFC;
+            margin-top: 30px;
+            padding: 20px 120px 20px 120px;
+            align-items: center;
+            transition: 0.3s;
+            &-txt{
+                transition: 0.3s;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+                text-align: center;
+                letter-spacing: 0.0357143em;
+                text-transform: uppercase;
+                color: #8B6AFC;
+            }
+            &-pic{
+                margin-left:14px;
+                &-white{
+                    display: none;
+                }
+            }
+            &:hover{
+                transition: 0.3s;
+                background-color:#8B6AFC;
+                .app__content-button-txt{
+                    transition: 0.3s;
+                    color: white;
+                }
+                .app__content-button-pic{
+                    display: none;
+                }
+                .app__content-button-pic-white{
+                    display: block;
+                    margin-left:14px;
+                }
+            }
+        }
+        &-bullet{
+            position: absolute;
+            z-index: 2;
+            right: cals(100vw/20);
+            top: calc(100vh/4);
+            transition: 0.5s;
+            &_top{
+                top: calc(100vh/50);
+                right: 20vw;
+            }
+            &_middle{
+                top: calc(100vh/4);
+            }
+            &_bottom{
+                top: calc(100vh/2);
+                right: 20vw;
+            }
+            background-color: white;
+            border: 1px solid #8B6AFC;
+            width: 287px;
+            height: 124px;
+            &:hover{
+                border-bottom: 4px solid #8B6AFC;
+                border-right: 4px solid #8B6AFC;
+                transition: 0.5s;
+            }
+            &-content{
+                top:0px;
+                &-title{
+                    text-align: right;
+                    font-family:'SourceCodePro';
+                    font-size: 36px;
+                    line-height: 32px;
+                    color: #8B6AFC;
+                    font-weight: 500;
+                    padding: 10px 20px 0px 20px;
+                }
+                &-txt{
+                    margin-top: 5px;
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: black;
+                    line-height: 34px;
+                    font-size: 14px;
+                    padding: 0px 30px 10px 30px;
+                }
+
+            }
+        }
+    }
+}
+
+.documentation{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: auto;
+    background: #F8F8F8;
+    &__block{
+        display: block;
+        width: 100%;
+        height: auto;
+        background-color: #8B6AFC;
+        &-content{
+            padding-top: 20px;
+            padding-left: 36px;
+            padding-bottom: 20px;
+            &-title{
+                font-family:'SourceCodePro';
+                font-size: 36px;
+                line-height: 98px;
+                color: white;
+                font-weight: 500;
+            }
+            &-txt{
+                font-family:'SourceCodePro';
+                font-weight: 400;
+                color: white;
+                font-size:16px;
+                line-height: 34px;
+                width: 712px;
+            }
+            &-button{
+                margin-top: 25px;
+                display: flex;
+                border: 1px solid white;
+                padding: 10px 120px 10px 120px;
+                align-items: center;
+                &-txt{
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 16px;
+                    text-align: center;
+                    letter-spacing: 0.0357143em;
+                    text-transform: uppercase;
+                    color: white;
+                }
+                &-pic{
+                    margin-left:14px;
+                }
+            }
+        }
+    }
+}
+
+.tariff{
+    height: auto;
+    background: #F8F8F8;
+    &__title{
+        font-family:'SourceCodePro';
+        font-size: 36px;
+        line-height: 98px;
+        color: #8B6AFC;
+        font-weight: 500;
+        padding-top:55px;
+        text-align: right;
+    }
+    &__txt{
+        font-family:'SourceCodePro';
+        font-weight: 400;
+        color: black;
+        font-size:16px;
+        line-height: 34px;
+        margin-top: 34px;
+        text-align: right;
+    }
+    &__plans{
+        display: flex;
+        justify-content:space-between;
+        margin-top: 40px;
+        padding-bottom: 40px;
+        &-items{
+            &-title{
+                text-align: center;
+                margin-top:40px;
+                font-family:'SourceCodePro';
+                font-size: 24px;
+                line-height: 98px;
+                color: black;
+                font-weight: 500;
+            }
+            &-txt{
+                text-align: center;
+                font-family:'SourceCodePro';
+                font-weight: 400;
+                color: black;
+                line-height: 34px;
+            }
+            &-button{
+                display: block;
+                text-align: center;
+                margin: 0 auto;
+                border: 1px solid rgba(15, 18, 23, 0.2);
+                margin-top: 30px;
+                padding: 8px 50px 8px 50px;
+                text-align: center;
+                font-family:'SourceCodePro';
+                font-weight: 500;
+                color: rgba(15, 18, 23, 0.2);
+                line-height: 34px;             
+                text-transform: uppercase;
+                transition: 0.3s;
+                &:hover{
+                    color: #8B6AFC;
+                    border:1px solid #8B6AFC;
+                    transition: 0.3s;
+                }
+            }
+            &_left{
+                display: block;
+                width: 300px;
+                height: 304px;
+                border: 5px solid rgba(15, 18, 23, 0.2);
+                z-index:1;
+                position:relative;
+                transition: 0.5s;
+                &:hover{
+                    border:5px solid #8B6AFC;
+                    transition: 0.3s;
+                }
+                &:before {
+                    position:absolute;
+                    top:-10px;
+                    left:10%;
+                    content:"";
+                    display:block;
+                    height:10px;
+                    width:80%;
+                    background:#F8F8F8;
+                 }
+                 &:after {
+                    position:absolute;
+                    bottom:-10px;
+                    left:10%;
+                    content:"";
+                    display:block;
+                    height:10px;
+                    width:80%;
+                    background:#F8F8F8;
+                 }
+            }
+            &_middle{
+                display: block;
+                width: 300px;
+                height: 304px;
+                border: 5px solid rgba(15, 18, 23, 0.2);
+                z-index:1;
+                position:relative;
+                transition: 0.5s;
+                &:hover{
+                    border:5px solid #8B6AFC;
+                    transition: 0.5s;
+                }
+                &:before {
+                    position:absolute;
+                    top:-10px;
+                    left:10%;
+                    content:"";
+                    display:block;
+                    height:10px;
+                    width:80%;
+                    background:#F8F8F8;
+                 }
+                 &:after {
+                    position:absolute;
+                    bottom:-10px;
+                    left:10%;
+                    content:"";
+                    display:block;
+                    height:10px;
+                    width:80%;
+                    background:#F8F8F8;
+                 }
+            }
+            &_right{
+                display: block;
+                width: 300px;
+                height: 304px;
+                border: 5px solid rgba(15, 18, 23, 0.2);
+                z-index:1;
+                position:relative;
+                transition: 0.5s;
+                &:hover{
+                    border:5px solid #8B6AFC;
+                    transition: 0.5s;
+                }
+                &:before {
+                    position:absolute;
+                    top:-10px;
+                    left:10%;
+                    content:"";
+                    display:block;
+                    height:10px;
+                    width:80%;
+                    background:#F8F8F8;
+                 }
+                 &:after {
+                    position:absolute;
+                    bottom:-10px;
+                    left:10%;
+                    content:"";
+                    display:block;
+                    height:10px;
+                    width:80%;
+                    background:#F8F8F8;
+                 }
+            }
+        }
+    }
+}
+
+.footer{
+    background-color:#0F1217;
+    height: 80vh;
+    &__divider{
+        display:block;
+        width: 100%;
+        background-color: white;
+        height: 1px;
+        margin-top:55px;
+        margin-bottom:55px;
+    }
+    &__connect{
+            padding-top:55px;
+            display: flex;
+            justify-content:space-between;
+        &-block{
+            &-title{
+                font-family:'SourceCodePro';
+                font-size: 36px;
+                line-height: 46px;
+                color: white;
+                font-weight: 500;
+                text-align: left;
+                width: 589px;
+            }
+            &-txt{
+                font-family:'SourceCodePro';
+                font-weight: 400;
+                color: #FFFFFF;
+                width: 582px;
+                line-height: 34px;
+                margin-top: 22px;
+            }
+        }
+        &-button{
+            display: flex;
+            border: 1px solid white;
+            height: 106px;
+            padding: 0px 100px 0px 100px;
+            align-items: center;
+            transition: 0.3s;
+            &-txt{
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 16px;
+                text-align: center;
+                letter-spacing: 0.0357143em;
+                text-transform: uppercase;
+                color: white;
+                transition: 0.3s;
+            }
+            &-pic{
+                margin-left:14px;
+            }
+            .footer__connect-button-pic_blue{
+                display: none;
+                transition: 0.3s;
+            }
+            &:hover{
+                transition: 0.3s;
+                border: 1px solid #8B6AFC;
+                .footer__connect-button-txt{
+                    color: #8B6AFC;
+                    transition: 0.3s;
+                }
+                .footer__connect-button-pic{
+                    display: none;
+                }
+                .footer__connect-button-pic_blue{
+                    margin-left:14px;
+                    display: block;
+                    transition: 0.3s;
+                }
+            }
+        }
+    }
+    &__content{
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        &-logo{
+            text-align: center;
+            &-pic{
+                width: 82px;
+                height: 71px;
+            }
+            &-txt{
+                font-family:'SourceCodePro';
+                font-weight: 400;
+                color: #FFFFFF;
+                line-height: 34px;
+            }
+        }
+        &-menu{
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+            &-item{
+                margin-bottom: 15px;
+                &-link{
+                    &-pic{
+                        transition: 0.3s;
+                        opacity: 0;
+                    }
+                    &:hover{
+                        .footer__content-menu-item-link-pic{
+                            transition: 0.3s;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+        &-buttons{
+            display: flex;
+            align-items: center;
+            &-mail{
+                width: 48px;
+                height: 48px;
+                border: 1px solid white;
+                border-radius:50%;
+                margin-right: 40px;
+                transition: 0.3s;
+                &:hover{
+                    transition: 0.3s;
+                    border: 1px solid #8B6AFC;
+                    background-color: #8B6AFC;
+                }
+            }
+            &-telegramm{
+                width: 48px;
+                height: 48px;
+                border: 1px solid white;
+                border-radius:50%;
+                transition: 0.3s;
+                &:hover{
+                    transition: 0.3s;
+                    border: 1px solid #8B6AFC;
+                    background-color: #8B6AFC;
+                }
+            }
+        }
+    }
+}
+
+.header__menu-button{
+    display: none;
+}
+
+.header__menu-mobile{
+    display: none;
+    overflow:hidden;
+    height: 100%;
+    width: 100vw;
+    position:fixed;
+    background-color:#0F1217;
+    z-index: 1001;
+    text-align: center;
+    ul{
+        height: 100%;
+        width:100%;
+        text-align: center;
+        padding: 0;
+        li{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            color: white;
+            text-decoration: none;
+            font-family: 'SourceCodePro';
+            font-weight: 500;
+            font-size: 34px;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+        }
+    }
+}
+
+
+
+
+@media (min-width: 1400px){
+    .container {
+        width: 80vw;
+        margin: 0 auto;
+    }
+    
+    p{
+        margin: 0 ;
+        padding: 0;
+    }
+    
+    h1,h2{
+        margin: 0 ;
+        padding: 0;
+    }
+    
+    button{
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+    
+    a{
+        margin: 0;
+        padding: 0;
+        color: white;
+        text-decoration: none;
+        font-family: 'SourceCodePro';
+        font-weight: 500;
+    }
+    
+    .header{
+        background-color: transparent;
+        position: fixed;
+        margin: 0 auto;
+        margin-top: 34px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        mix-blend-mode: difference;
+        .container_header{
+            display: flex;
+            align-items: center;
+            margin: 0px 25px 0px 25px;
+        }
+        &__logo{
+            width: 25vw;
+        }
+        &__menu{
+            margin-left: 100px;
+            padding: 0;
+            list-style-type: none;
+            &-item{
+                display: inline-block;
+                margin-right: 74px;
+                &-link{
+                    position: relative;
+                    &-pic{
+                        left: -30px;
+                        top: 6px;
+                        position: absolute;
+                        opacity: 0;
+                        transition: 0.3s;
+                    }
+                    &:hover{
+                        .header__menu-item-link-pic{     
+                            opacity: 1;
+                            transition: 0.3s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .main{
+        background: url(/src/img/background.png);
+        background-size: cover;
+        background-repeat:no-repeat;
+        height: 100vh;
+        position: relative;
+        &__content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 121px;
+            &-title{
+                color: white;
+                font-family: 'SourceCodePro';
+                font-weight: 800;
+                font-size: 64px;
+                line-height: 98px;
+                -webkit-text-stroke:2px rgba(192, 124, 245, 0.7);
+                &-span{
+                    font-size: 96px;
+                    -webkit-text-stroke:2px rgba(192, 124, 245, 0.7);
+                    color: transparent;
+                }
+            }
+            
+        }
+        &__bottom{
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            &-button{
+                &-txt{
+                    color: white;
+                    font-family: 'SourceCodePro';
+                    font-weight: 500;
+                    margin-bottom:12px;
+                }
+            }
+        }
+    }
+    
+    .about{
+        height: 100vh;
+        background: linear-gradient(180deg, #0F1217 30.21%, #1D2229 100%);
+        &__title{
+            font-family:'SourceCodePro';
+            font-size: 36px;
+            line-height: 98px;
+            color: #8B6AFC;
+            font-weight: 500;
+            padding-top:55px;
+            text-align: right;
+        }
+        &__content{
+            margin-top: 14vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &-txt{
+                font-family:'SourceCodePro';
+                font-weight: 400;
+                color: #FFFFFF;
+                width: 582px;
+                line-height: 34px;
+            }
+        }
+    }
+    
+    .app{
+        height: 95vh;
+        background: #F8F8F8;
+        position: relative;
+        &__right{
+            margin-left: 160px;
+        }
+        &__title{
+            font-family:'SourceCodePro';
+            font-size: 36px;
+            line-height: 98px;
+            color: #8B6AFC;
+            font-weight: 500;
+            padding-top:55px;
+            text-align: left;
+    
+        }
+        &__hand{
+            position: absolute;
+            top: 0px;
+            right: -5vw;
+            z-index: 0;
+            transition: 0.5s;
+        }
+        &__content{
+            display: flex;
+            align-items: center;
+            position: relative;
+            &-block{
+                width: 460px;
+                margin-top:18px;
+                &-title{
+                    font-family: 'SourceCodePro';
+                    color: black;
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 98px;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: black;
+                    width: 582px;
+                    line-height: 34px;
+                }
+    
+            }
+            &-button{
+                display: flex;
+                border: 1px solid #8B6AFC;
+                margin-top: 30px;
+                padding: 20px 120px 20px 120px;
+                align-items: center;
+                transition: 0.3s;
+                &-txt{
+                    transition: 0.3s;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 16px;
+                    text-align: center;
+                    letter-spacing: 0.0357143em;
+                    text-transform: uppercase;
+                    color: #8B6AFC;
+                }
+                &-pic{
+                    margin-left:14px;
+                    &-white{
+                        display: none;
+                    }
+                }
+                &:hover{
+                    transition: 0.3s;
+                    background-color:#8B6AFC;
+                    .app__content-button-txt{
+                        transition: 0.3s;
+                        color: white;
+                    }
+                    .app__content-button-pic{
+                        display: none;
+                    }
+                    .app__content-button-pic-white{
+                        display: block;
+                        margin-left:14px;
+                    }
+                }
+            }
+            &-bullet{
+                position: absolute;
+                z-index: 2;
+                right: cals(100vw/20);
+                top: calc(100vh/4);
+                transition: 0.5s;
+                &_top{
+                    top: calc(100vh/50);
+                    right: 20vw;
+                }
+                &_middle{
+                    top: calc(100vh/4);
+                }
+                &_bottom{
+                    top: calc(100vh/2);
+                    right: 20vw;
+                }
+                background-color: white;
+                border: 1px solid #8B6AFC;
+                width: 287px;
+                height: 124px;
+                &:hover{
+                    border-bottom: 4px solid #8B6AFC;
+                    border-right: 4px solid #8B6AFC;
+                    transition: 0.5s;
+                }
+                &-content{
+                    top:0px;
+                    &-title{
+                        text-align: right;
+                        font-family:'SourceCodePro';
+                        font-size: 36px;
+                        line-height: 32px;
+                        color: #8B6AFC;
+                        font-weight: 500;
+                        padding: 10px 20px 0px 20px;
+                    }
+                    &-txt{
+                        margin-top: 5px;
+                        font-family:'SourceCodePro';
+                        font-weight: 400;
+                        color: black;
+                        line-height: 34px;
+                        font-size: 14px;
+                        padding: 0px 30px 10px 30px;
+                    }
+    
+                }
+            }
+        }
+    }
+    
+    .documentation{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: auto;
+        background: #F8F8F8;
+        &__block{
+            display: block;
+            width: 100%;
+            height: auto;
+            background-color: #8B6AFC;
+            &-content{
+                padding-top: 20px;
+                padding-left: 36px;
+                padding-bottom: 20px;
+                &-title{
+                    font-family:'SourceCodePro';
+                    font-size: 36px;
+                    line-height: 98px;
+                    color: white;
+                    font-weight: 500;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: white;
+                    font-size:16px;
+                    line-height: 34px;
+                    width: 712px;
+                }
+                &-button{
+                    margin-top: 25px;
+                    display: flex;
+                    border: 1px solid white;
+                    padding: 10px 120px 10px 120px;
+                    align-items: center;
+                    &-txt{
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 16px;
+                        text-align: center;
+                        letter-spacing: 0.0357143em;
+                        text-transform: uppercase;
+                        color: white;
+                    }
+                    &-pic{
+                        margin-left:14px;
+                    }
+                }
+            }
+        }
+    }
+    
+    .tariff{
+        height: auto;
+        background: #F8F8F8;
+        &__title{
+            font-family:'SourceCodePro';
+            font-size: 36px;
+            line-height: 98px;
+            color: #8B6AFC;
+            font-weight: 500;
+            padding-top:55px;
+            text-align: right;
+        }
+        &__txt{
+            font-family:'SourceCodePro';
+            font-weight: 400;
+            color: black;
+            font-size:16px;
+            line-height: 34px;
+            margin-top: 34px;
+            text-align: right;
+        }
+        &__plans{
+            display: flex;
+            justify-content:space-between;
+            margin-top: 40px;
+            padding-bottom: 40px;
+            &-items{
+                &-title{
+                    text-align: center;
+                    margin-top:40px;
+                    font-family:'SourceCodePro';
+                    font-size: 24px;
+                    line-height: 98px;
+                    color: black;
+                    font-weight: 500;
+                }
+                &-txt{
+                    text-align: center;
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: black;
+                    line-height: 34px;
+                    padding: 0px 10px 0px 10px;
+                }
+                &-button{
+                    display: block;
+                    text-align: center;
+                    margin: 0 auto;
+                    border: 1px solid rgba(15, 18, 23, 0.2);
+                    margin-top: 30px;
+                    padding: 8px 50px 8px 50px;
+                    text-align: center;
+                    font-family:'SourceCodePro';
+                    font-weight: 500;
+                    color: rgba(15, 18, 23, 0.2);
+                    line-height: 34px;             
+                    text-transform: uppercase;
+                    transition: 0.3s;
+                    &:hover{
+                        color: #8B6AFC;
+                        border:1px solid #8B6AFC;
+                        transition: 0.3s;
+                    }
+                }
+                &_left{
+                    display: block;
+                    width: 300px;
+                    height: 304px;
+                    border: 5px solid rgba(15, 18, 23, 0.2);
+                    z-index:1;
+                    position:relative;
+                    transition: 0.5s;
+                    &:hover{
+                        border:5px solid #8B6AFC;
+                        transition: 0.3s;
+                    }
+                    &:before {
+                        position:absolute;
+                        top:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                     &:after {
+                        position:absolute;
+                        bottom:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                }
+                &_middle{
+                    display: block;
+                    width: 300px;
+                    height: 304px;
+                    border: 5px solid rgba(15, 18, 23, 0.2);
+                    z-index:1;
+                    position:relative;
+                    transition: 0.5s;
+                    &:hover{
+                        border:5px solid #8B6AFC;
+                        transition: 0.5s;
+                    }
+                    &:before {
+                        position:absolute;
+                        top:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                     &:after {
+                        position:absolute;
+                        bottom:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                }
+                &_right{
+                    display: block;
+                    width: 300px;
+                    height: 304px;
+                    border: 5px solid rgba(15, 18, 23, 0.2);
+                    z-index:1;
+                    position:relative;
+                    transition: 0.5s;
+                    &:hover{
+                        border:5px solid #8B6AFC;
+                        transition: 0.5s;
+                    }
+                    &:before {
+                        position:absolute;
+                        top:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                     &:after {
+                        position:absolute;
+                        bottom:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                }
+            }
+        }
+    }
+    
+    .footer{
+        background-color:#0F1217;
+        height: 80vh;
+        &__divider{
+            display:block;
+            width: 100%;
+            background-color: white;
+            height: 1px;
+            margin-top:55px;
+            margin-bottom:55px;
+        }
+        &__connect{
+                padding-top:55px;
+                display: flex;
+                justify-content:space-between;
+            &-block{
+                &-title{
+                    font-family:'SourceCodePro';
+                    font-size: 36px;
+                    line-height: 46px;
+                    color: white;
+                    font-weight: 500;
+                    text-align: left;
+                    width: 589px;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: #FFFFFF;
+                    width: 582px;
+                    line-height: 34px;
+                    margin-top: 22px;
+                }
+            }
+            &-button{
+                display: flex;
+                border: 1px solid white;
+                height: 106px;
+                padding: 0px 100px 0px 100px;
+                align-items: center;
+                transition: 0.3s;
+                &-txt{
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 16px;
+                    text-align: center;
+                    letter-spacing: 0.0357143em;
+                    text-transform: uppercase;
+                    color: white;
+                    transition: 0.3s;
+                }
+                &-pic{
+                    margin-left:14px;
+                }
+                .footer__connect-button-pic_blue{
+                    display: none;
+                    transition: 0.3s;
+                }
+                &:hover{
+                    transition: 0.3s;
+                    border: 1px solid #8B6AFC;
+                    .footer__connect-button-txt{
+                        color: #8B6AFC;
+                        transition: 0.3s;
+                    }
+                    .footer__connect-button-pic{
+                        display: none;
+                    }
+                    .footer__connect-button-pic_blue{
+                        margin-left:14px;
+                        display: block;
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+        &__content{
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            &-logo{
+                text-align: center;
+                &-pic{
+                    width: 82px;
+                    height: 71px;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: #FFFFFF;
+                    line-height: 34px;
+                }
+            }
+            &-menu{
+                padding: 0px;
+                margin: 0px;
+                list-style: none;
+                &-item{
+                    margin-bottom: 15px;
+                    &-link{
+                        &-pic{
+                            transition: 0.3s;
+                            opacity: 0;
+                        }
+                        &:hover{
+                            .footer__content-menu-item-link-pic{
+                                transition: 0.3s;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            &-buttons{
+                display: flex;
+                align-items: center;
+                &-mail{
+                    width: 48px;
+                    height: 48px;
+                    border: 1px solid white;
+                    border-radius:50%;
+                    margin-right: 40px;
+                    transition: 0.3s;
+                    &:hover{
+                        transition: 0.3s;
+                        border: 1px solid #8B6AFC;
+                        background-color: #8B6AFC;
+                    }
+                }
+                &-telegramm{
+                    width: 48px;
+                    height: 48px;
+                    border: 1px solid white;
+                    border-radius:50%;
+                    transition: 0.3s;
+                    &:hover{
+                        transition: 0.3s;
+                        border: 1px solid #8B6AFC;
+                        background-color: #8B6AFC;
+                    }
+                }
+            }
+        }
+    }
+
+    .header__menu-button{
+        display: none;
+    }
+    
+    .header__menu-mobile{
+        display: none;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1399px){
+    html, body {
+        overflow-x:hidden 
+      } 
+
+    .container {
+        width: 80vw;
+        margin: 0 auto;
+    }
+    
+    p{
+        margin: 0 ;
+        padding: 0;
+    }
+    
+    h1,h2{
+        margin: 0 ;
+        padding: 0;
+    }
+    
+    button{
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+    
+    a{
+        margin: 0;
+        padding: 0;
+        color: white;
+        text-decoration: none;
+        font-family: 'SourceCodePro';
+        font-weight: 500;
+    }
+    
+    .header{
+        background-color: transparent;
+        position: fixed;
+        margin: 0 auto;
+        margin-top: 34px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        mix-blend-mode: difference;
+        .container_header{
+            display: flex;
+            align-items: center;
+            margin: 0px 25px 0px 25px;
+        }
+        &__logo{
+            width: 25vw;
+        }
+        &__menu{
+            margin-left: 0px;
+            padding: 0;
+            list-style-type: none;
+            &-item{
+                display: inline-block;
+                margin-right: 74px;
+                &-link{
+                    position: relative;
+                    &-pic{
+                        left: -30px;
+                        top: 6px;
+                        position: absolute;
+                        opacity: 0;
+                        transition: 0.3s;
+                    }
+                    &:hover{
+                        .header__menu-item-link-pic{     
+                            opacity: 1;
+                            transition: 0.3s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .main{
+        background: url(/src/img/background.png);
+        background-size: cover;
+        background-repeat:no-repeat;
+        height: 100vh;
+        position: relative;
+        &__content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 121px;
+            &-title{
+                color: white;
+                font-family: 'SourceCodePro';
+                font-weight: 800;
+                font-size: 64px;
+                line-height: 98px;
+                -webkit-text-stroke:2px rgba(192, 124, 245, 0.7);
+                &-span{
+                    font-size: 96px;
+                    -webkit-text-stroke:2px rgba(192, 124, 245, 0.7);
+                    color: transparent;
+                }
+            }
+            
+        }
+        &__bottom{
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            &-button{
+                &-txt{
+                    color: white;
+                    font-family: 'SourceCodePro';
+                    font-weight: 500;
+                    margin-bottom:12px;
+                }
+            }
+        }
+    }
+    
+    .about{
+        height: auto;
+        background: linear-gradient(180deg, #0F1217 30.21%, #1D2229 100%);
+        &__title{
+            font-family:'SourceCodePro';
+            font-size: 36px;
+            line-height: 98px;
+            color: #8B6AFC;
+            font-weight: 500;
+            padding-top:55px;
+            text-align: right;
+        }
+        &__content{
+            margin-top: 14vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 100px;
+            &-txt{
+                font-family:'SourceCodePro';
+                font-weight: 400;
+                color: #FFFFFF;
+                width: 582px;
+                line-height: 34px;
+            }
+        }
+    }
+    
+    .app{
+        height: 95vh;
+        background: #F8F8F8;
+        position: relative;
+        &__right{
+            margin-left: 160px;
+        }
+        &__title{
+            font-family:'SourceCodePro';
+            font-size: 36px;
+            line-height: 98px;
+            color: #8B6AFC;
+            font-weight: 500;
+            padding-top:55px;
+            text-align: left;
+    
+        }
+        &__hand{
+            position: absolute;
+            top: 0px;
+            right: -20vw;
+            z-index: 0;
+            transition: 0.5s;
+        }
+        &__content{
+            display: flex;
+            align-items: center;
+            position: relative;
+            &-block{
+                width: 460px;
+                margin-top:18px;
+                &-title{
+                    font-family: 'SourceCodePro';
+                    color: black;
+                    font-weight: 600;
+                    font-size: 20px;
+                    line-height: 98px;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: black;
+                    width: 582px;
+                    line-height: 34px;
+                }
+    
+            }
+            &-button{
+                display: flex;
+                border: 1px solid #8B6AFC;
+                margin-top: 30px;
+                padding: 20px 120px 20px 120px;
+                align-items: center;
+                transition: 0.3s;
+                &-txt{
+                    transition: 0.3s;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 16px;
+                    text-align: center;
+                    letter-spacing: 0.0357143em;
+                    text-transform: uppercase;
+                    color: #8B6AFC;
+                }
+                &-pic{
+                    margin-left:14px;
+                    &-white{
+                        display: none;
+                    }
+                }
+                &:hover{
+                    transition: 0.3s;
+                    background-color:#8B6AFC;
+                    .app__content-button-txt{
+                        transition: 0.3s;
+                        color: white;
+                    }
+                    .app__content-button-pic{
+                        display: none;
+                    }
+                    .app__content-button-pic-white{
+                        display: block;
+                        margin-left:14px;
+                    }
+                }
+            }
+            &-bullet{
+                position: absolute;
+                z-index: 2;
+                right: cals(100vw/20);
+                top: calc(100vh/4);
+                transition: 0.5s;
+                &_top{
+                    top: calc(100vh/50);
+                    right: 5vw;
+                }
+                &_middle{
+                    top: calc(100vh/4);
+                }
+                &_bottom{
+                    top: calc(100vh/2);
+                    right: 5vw;
+                }
+                background-color: white;
+                border: 1px solid #8B6AFC;
+                width: 287px;
+                height: 124px;
+                &:hover{
+                    border-bottom: 4px solid #8B6AFC;
+                    border-right: 4px solid #8B6AFC;
+                    transition: 0.5s;
+                }
+                &-content{
+                    top:0px;
+                    &-title{
+                        text-align: right;
+                        font-family:'SourceCodePro';
+                        font-size: 36px;
+                        line-height: 32px;
+                        color: #8B6AFC;
+                        font-weight: 500;
+                        padding: 10px 20px 0px 20px;
+                    }
+                    &-txt{
+                        margin-top: 5px;
+                        font-family:'SourceCodePro';
+                        font-weight: 400;
+                        color: black;
+                        line-height: 34px;
+                        font-size: 14px;
+                        padding: 0px 30px 10px 30px;
+                    }
+    
+                }
+            }
+        }
+    }
+    
+    .documentation{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: auto;
+        background: #F8F8F8;
+        &__block{
+            display: block;
+            width: 100%;
+            height: auto;
+            background-color: #8B6AFC;
+            &-content{
+                padding-top: 20px;
+                padding-left: 36px;
+                padding-bottom: 20px;
+                &-title{
+                    font-family:'SourceCodePro';
+                    font-size: 36px;
+                    line-height: 98px;
+                    color: white;
+                    font-weight: 500;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: white;
+                    font-size:16px;
+                    line-height: 34px;
+                    width: 712px;
+                }
+                &-button{
+                    margin-top: 25px;
+                    display: flex;
+                    border: 1px solid white;
+                    padding: 10px 120px 10px 120px;
+                    align-items: center;
+                    &-txt{
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 16px;
+                        text-align: center;
+                        letter-spacing: 0.0357143em;
+                        text-transform: uppercase;
+                        color: white;
+                    }
+                    &-pic{
+                        margin-left:14px;
+                    }
+                }
+            }
+        }
+    }
+    
+    .tariff{
+        height: auto;
+        background: #F8F8F8;
+        &__title{
+            font-family:'SourceCodePro';
+            font-size: 36px;
+            line-height: 98px;
+            color: #8B6AFC;
+            font-weight: 500;
+            padding-top:55px;
+            text-align: right;
+        }
+        &__txt{
+            font-family:'SourceCodePro';
+            font-weight: 400;
+            color: black;
+            font-size:16px;
+            line-height: 34px;
+            margin-top: 34px;
+            text-align: right;
+        }
+        &__plans{
+            display: flex;
+            justify-content:space-between;
+            margin-top: 40px;
+            padding-bottom: 40px;
+            &-items{
+                &-title{
+                    text-align: center;
+                    margin-top:40px;
+                    font-family:'SourceCodePro';
+                    font-size: 24px;
+                    line-height: 98px;
+                    color: black;
+                    font-weight: 500;
+                }
+                &-txt{
+                    text-align: center;
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: black;
+                    line-height: 34px;
+                    padding: 0px 10px 0px 10px;
+                }
+                &-button{
+                    display: block;
+                    text-align: center;
+                    margin: 0 auto;
+                    border: 1px solid rgba(15, 18, 23, 0.2);
+                    margin-top: 30px;
+                    padding: 8px 50px 8px 50px;
+                    text-align: center;
+                    font-family:'SourceCodePro';
+                    font-weight: 500;
+                    color: rgba(15, 18, 23, 0.2);
+                    line-height: 34px;             
+                    text-transform: uppercase;
+                    transition: 0.3s;
+                    &:hover{
+                        color: #8B6AFC;
+                        border:1px solid #8B6AFC;
+                        transition: 0.3s;
+                    }
+                }
+                &_left{
+                    display: block;
+                    width: 300px;
+                    height: 304px;
+                    border: 5px solid rgba(15, 18, 23, 0.2);
+                    z-index:1;
+                    position:relative;
+                    transition: 0.5s;
+                    &:hover{
+                        border:5px solid #8B6AFC;
+                        transition: 0.3s;
+                    }
+                    &:before {
+                        position:absolute;
+                        top:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                     &:after {
+                        position:absolute;
+                        bottom:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                }
+                &_middle{
+                    display: block;
+                    width: 300px;
+                    height: 304px;
+                    border: 5px solid rgba(15, 18, 23, 0.2);
+                    z-index:1;
+                    position:relative;
+                    transition: 0.5s;
+                    &:hover{
+                        border:5px solid #8B6AFC;
+                        transition: 0.5s;
+                    }
+                    &:before {
+                        position:absolute;
+                        top:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                     &:after {
+                        position:absolute;
+                        bottom:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                }
+                &_right{
+                    display: block;
+                    width: 300px;
+                    height: 304px;
+                    border: 5px solid rgba(15, 18, 23, 0.2);
+                    z-index:1;
+                    position:relative;
+                    transition: 0.5s;
+                    &:hover{
+                        border:5px solid #8B6AFC;
+                        transition: 0.5s;
+                    }
+                    &:before {
+                        position:absolute;
+                        top:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                     &:after {
+                        position:absolute;
+                        bottom:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                }
+            }
+        }
+    }
+    
+    .footer{
+        background-color:#0F1217;
+        height: 80vh;
+        &__divider{
+            display:block;
+            width: 100%;
+            background-color: white;
+            height: 1px;
+            margin-top:55px;
+            margin-bottom:55px;
+        }
+        &__connect{
+                padding-top:55px;
+                display: flex;
+                justify-content:space-between;
+            &-block{
+                &-title{
+                    font-family:'SourceCodePro';
+                    font-size: 36px;
+                    line-height: 46px;
+                    color: white;
+                    font-weight: 500;
+                    text-align: left;
+                    width: 589px;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: #FFFFFF;
+                    width: 582px;
+                    line-height: 34px;
+                    margin-top: 22px;
+                }
+            }
+            &-button{
+                display: flex;
+                border: 1px solid white;
+                height: 106px;
+                padding: 0px 100px 0px 100px;
+                align-items: center;
+                transition: 0.3s;
+                &-txt{
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 16px;
+                    text-align: center;
+                    letter-spacing: 0.0357143em;
+                    text-transform: uppercase;
+                    color: white;
+                    transition: 0.3s;
+                }
+                &-pic{
+                    margin-left:14px;
+                }
+                .footer__connect-button-pic_blue{
+                    display: none;
+                    transition: 0.3s;
+                }
+                &:hover{
+                    transition: 0.3s;
+                    border: 1px solid #8B6AFC;
+                    .footer__connect-button-txt{
+                        color: #8B6AFC;
+                        transition: 0.3s;
+                    }
+                    .footer__connect-button-pic{
+                        display: none;
+                    }
+                    .footer__connect-button-pic_blue{
+                        margin-left:14px;
+                        display: block;
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+        &__content{
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            &-logo{
+                text-align: center;
+                &-pic{
+                    width: 82px;
+                    height: 71px;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: #FFFFFF;
+                    line-height: 34px;
+                }
+            }
+            &-menu{
+                padding: 0px;
+                margin: 0px;
+                list-style: none;
+                &-item{
+                    margin-bottom: 15px;
+                    &-link{
+                        &-pic{
+                            transition: 0.3s;
+                            opacity: 0;
+                        }
+                        &:hover{
+                            .footer__content-menu-item-link-pic{
+                                transition: 0.3s;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            &-buttons{
+                display: flex;
+                align-items: center;
+                &-mail{
+                    width: 48px;
+                    height: 48px;
+                    border: 1px solid white;
+                    border-radius:50%;
+                    margin-right: 40px;
+                    transition: 0.3s;
+                    &:hover{
+                        transition: 0.3s;
+                        border: 1px solid #8B6AFC;
+                        background-color: #8B6AFC;
+                    }
+                }
+                &-telegramm{
+                    width: 48px;
+                    height: 48px;
+                    border: 1px solid white;
+                    border-radius:50%;
+                    transition: 0.3s;
+                    &:hover{
+                        transition: 0.3s;
+                        border: 1px solid #8B6AFC;
+                        background-color: #8B6AFC;
+                    }
+                }
+            }
+        }
+    }
+
+    .header__menu-button{
+        display: none;
+    }
+    
+    .header__menu-mobile{
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
+    html, body {
+        overflow-x:hidden 
+      } 
+
+    .container {
+        width: 80vw;
+        margin: 0 auto;
+    }
+    
+    p{
+        margin: 0 ;
+        padding: 0;
+    }
+    
+    h1,h2{
+        margin: 0 ;
+        padding: 0;
+    }
+    
+    button{
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+    
+    a{
+        margin: 0;
+        padding: 0;
+        color: white;
+        text-decoration: none;
+        font-family: 'SourceCodePro';
+        font-weight: 500;
+    }
+    
+    .header{
+        background-color: transparent;
+        position: fixed;
+        margin: 0 auto;
+        margin-top: 34px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        mix-blend-mode: difference;
+        .container_header{
+            width: 100vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0px 0px 0px 0px;
+        }
+        &__logo{
+            width: 25vw;
+            padding-left: 20px;
+        }
+        &__menu{
+            display: none;
+            margin-left: 0px;
+            padding: 0;
+            list-style-type: none;
+            &-item{
+                display: inline-block;
+                margin-right: 74px;
+                &-link{
+                    position: relative;
+                    &-pic{
+                        left: -30px;
+                        top: 6px;
+                        position: absolute;
+                        opacity: 0;
+                        transition: 0.3s;
+                    }
+                    &:hover{
+                        .header__menu-item-link-pic{     
+                            opacity: 1;
+                            transition: 0.3s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .header__menu-button{
+        padding-right: 20px;
+        display: flex;
+        justify-content:space-between;
+        height: 26px;
+        width: 32px;
+        flex-direction: column;
+        &_line{
+            display: block;
+            height: 4px;
+            width: 100%;
+            border-radius: 10px;
+            background: #ffffff;
+        }
+    }
+    
+    .header__menu-mobile{
+        display: none;
+        text-align: center;
+        ul{
+            height: 100%;
+            width:100%;
+            text-align: center;
+        }
+    }
+
+    .header__menu-mobile{
+        display: none;
+    
+    }
+
+    
+    .main{
+        background: url(/src/img/background.png);
+        background-size: cover;
+        background-repeat:no-repeat;
+        height: 100vh;
+        position: relative;
+        &__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 121px;
+            &-title{
+                color: white;
+                font-family: 'SourceCodePro';
+                font-weight: 800;
+                font-size: 64px;
+                line-height: 98px;
+                -webkit-text-stroke:2px rgba(192, 124, 245, 0.7);
+                &-span{
+                    font-size: 96px;
+                    -webkit-text-stroke:2px rgba(192, 124, 245, 0.7);
+                    color: transparent;
+                }
+            }
+            
+        }
+        &__bottom{
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            &-button{
+                &-txt{
+                    color: white;
+                    font-family: 'SourceCodePro';
+                    font-size: 20px;
+                    font-weight: 500;
+                    margin-bottom:12px;
+                }
+            }
+        }
+    }
+    
+    .about{
+        height: auto;
+        background: linear-gradient(180deg, #0F1217 30.21%, #1D2229 100%);
+        &__title{
+            font-family:'SourceCodePro';
+            font-size: 42px;
+            line-height: 98px;
+            color: #8B6AFC;
+            font-weight: 500;
+            padding-top:55px;
+            text-align: center;
+        }
+        &__content{
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 100px;
+            &-txt{
+                font-size: 21px;
+                font-family:'SourceCodePro';
+                font-weight: 400;
+                color: #FFFFFF;
+                width: 582px;
+                line-height: 34px;
+            }
+        }
+    }
+    
+    .app{
+        height: auto;
+        background: #F8F8F8;
+        position: relative;
+        padding-bottom: 50px;
+        &__right{
+            margin-left: 0px;
+        }
+        &__title{
+            font-family:'SourceCodePro';
+            font-size: 36px;
+            line-height: 98px;
+            color: #8B6AFC;
+            font-weight: 500;
+            padding-top:55px;
+            text-align: center;
+    
+        }
+        &__hand{
+            display: none;
+            position: absolute;
+            top: 0px;
+            right: -20vw;
+            z-index: 0;
+            transition: 0.5s;
+        }
+        &__content{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            &-block{
+                width: 100%;
+                margin-top:18px;
+                &-title{
+                    font-family: 'SourceCodePro';
+                    color: black;
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 98px;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: black;
+                    font-size: 21px;
+                    width: 100%;
+                    line-height: 34px;
+                }
+    
+            }
+            &-button{
+                display: flex;
+                border: 1px solid #8B6AFC;
+                margin-top: 30px;
+                padding: 20px 120px 20px 120px;
+                align-items: center;
+                transition: 0.3s;
+                &-txt{
+                    transition: 0.3s;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 16px;
+                    text-align: center;
+                    letter-spacing: 0.0357143em;
+                    text-transform: uppercase;
+                    color: #8B6AFC;
+                }
+                &-pic{
+                    margin-left:14px;
+                    &-white{
+                        display: none;
+                    }
+                }
+                &:hover{
+                    transition: 0.3s;
+                    background-color:#8B6AFC;
+                    .app__content-button-txt{
+                        transition: 0.3s;
+                        color: white;
+                    }
+                    .app__content-button-pic{
+                        display: none;
+                    }
+                    .app__content-button-pic-white{
+                        display: block;
+                        margin-left:14px;
+                    }
+                }
+            }
+            &-bullet{
+                display: none;
+                margin-top: 20px;
+                position: relative;
+                z-index: 2;
+                right:0;
+                top: 0;
+                transition: 0.5s;
+                &_top{
+                    top: 0;
+                    right: 0;
+                }
+                &_middle{
+                    top: 0;
+                }
+                &_bottom{
+                    top: 0;
+                    right: 0;
+                }
+                background-color: white;
+                border: 1px solid #8B6AFC;
+                width: 287px;
+                height: 124px;
+                &:hover{
+                    border-bottom: 4px solid #8B6AFC;
+                    border-right: 4px solid #8B6AFC;
+                    transition: 0.5s;
+                }
+                &-content{
+                    top:0px;
+                    &-title{
+                        text-align: right;
+                        font-family:'SourceCodePro';
+                        font-size: 36px;
+                        line-height: 32px;
+                        color: #8B6AFC;
+                        font-weight: 500;
+                        padding: 10px 20px 0px 20px;
+                    }
+                    &-txt{
+                        margin-top: 5px;
+                        font-family:'SourceCodePro';
+                        font-weight: 400;
+                        color: black;
+                        line-height: 34px;
+                        font-size: 14px;
+                        padding: 0px 30px 10px 30px;
+                    }
+    
+                }
+            }
+        }
+    }
+    
+    .documentation{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: auto;
+        background: #F8F8F8;
+        &__block{
+            display: block;
+            width: 100%;
+            height: auto;
+            background-color: #8B6AFC;
+            &-content{
+                padding-top: 20px;
+                padding-left: 36px;
+                padding-bottom: 20px;
+                &-title{
+                    font-family:'SourceCodePro';
+                    font-size: 36px;
+                    line-height: 98px;
+                    color: white;
+                    font-weight: 500;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: white;
+                    font-size:21px;
+                    line-height: 34px;
+                    width: 100%
+                }
+                &-button{
+                    margin-top: 25px;
+                    display: flex;
+                    border: 1px solid white;
+                    padding: 10px 120px 10px 120px;
+                    align-items: center;
+                    &-txt{
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 16px;
+                        text-align: center;
+                        letter-spacing: 0.0357143em;
+                        text-transform: uppercase;
+                        color: white;
+                    }
+                    &-pic{
+                        margin-left:14px;
+                    }
+                }
+            }
+        }
+    }
+    
+    .tariff{
+        height: auto;
+        background: #F8F8F8;
+        &__title{
+            font-family:'SourceCodePro';
+            font-size: 36px;
+            line-height: 98px;
+            color: #8B6AFC;
+            font-weight: 500;
+            padding-top:55px;
+            text-align: right;
+        }
+        &__txt{
+            font-family:'SourceCodePro';
+            font-weight: 400;
+            color: black;
+            font-size:21px;
+            line-height: 34px;
+            margin-top: 34px;
+            text-align: right;
+        }
+        &__plans{
+            display: flex;
+            justify-content:space-between;
+            flex-direction: column;
+            margin-top: 40px;
+            padding-bottom: 40px;
+            &-items{
+                margin-bottom: 40px;
+                &-title{
+                    text-align: center;
+                    margin-top:40px;
+                    font-family:'SourceCodePro';
+                    font-size: 24px;
+                    line-height: 98px;
+                    color: black;
+                    font-weight: 500;
+                }
+                &-txt{
+                    text-align: center;
+                    font-family:'SourceCodePro';
+                    font-size: 21px;
+                    font-weight: 400;
+                    color: black;
+                    line-height: 34px;
+                    padding: 0px 10px 0px 10px;
+                }
+                &-button{
+                    display: block;
+                    text-align: center;
+                    margin: 0 auto;
+                    border: 1px solid rgba(15, 18, 23, 0.2);
+                    margin-top: 30px;
+                    padding: 8px 50px 8px 50px;
+                    text-align: center;
+                    font-family:'SourceCodePro';
+                    font-weight: 500;
+                    font-size: 21px;
+                    color: rgba(15, 18, 23, 0.2);
+                    line-height: 34px;             
+                    text-transform: uppercase;
+                    transition: 0.3s;
+                    &:hover{
+                        color: #8B6AFC;
+                        border:1px solid #8B6AFC;
+                        transition: 0.3s;
+                    }
+                }
+                &_left{
+                    display: block;
+                    width: 100%;
+                    height: 304px;
+                    border: 5px solid rgba(15, 18, 23, 0.2);
+                    z-index:1;
+                    position:relative;
+                    transition: 0.5s;
+                    &:hover{
+                        border:5px solid #8B6AFC;
+                        transition: 0.3s;
+                    }
+                    &:before {
+                        position:absolute;
+                        top:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                     &:after {
+                        position:absolute;
+                        bottom:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                }
+                &_middle{
+                    display: block;
+                    width: 100%;
+                    height: 304px;
+                    border: 5px solid rgba(15, 18, 23, 0.2);
+                    z-index:1;
+                    position:relative;
+                    transition: 0.5s;
+                    &:hover{
+                        border:5px solid #8B6AFC;
+                        transition: 0.5s;
+                    }
+                    &:before {
+                        position:absolute;
+                        top:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                     &:after {
+                        position:absolute;
+                        bottom:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                }
+                &_right{
+                    display: block;
+                    width: 100%;
+                    height: 304px;
+                    border: 5px solid rgba(15, 18, 23, 0.2);
+                    z-index:1;
+                    position:relative;
+                    transition: 0.5s;
+                    &:hover{
+                        border:5px solid #8B6AFC;
+                        transition: 0.5s;
+                    }
+                    &:before {
+                        position:absolute;
+                        top:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                     &:after {
+                        position:absolute;
+                        bottom:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                }
+            }
+        }
+    }
+    
+    .footer{
+        background-color:#0F1217;
+        height: 80vh;
+        &__divider{
+            display:block;
+            width: 100%;
+            background-color: white;
+            height: 1px;
+            margin-top:55px;
+            margin-bottom:55px;
+        }
+        &__connect{
+                padding-top:55px;
+                display: flex;
+                justify-content:space-between;
+                flex-direction: column;
+            &-block{
+                &-title{
+                    font-family:'SourceCodePro';
+                    font-size: 36px;
+                    line-height: 46px;
+                    color: white;
+                    font-weight: 500;
+                    text-align: left;
+                    width: 589px;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: #FFFFFF;
+                    width: 582px;
+                    line-height: 34px;
+                    margin-top: 22px;
+                }
+            }
+            &-button{
+                display: flex;
+                border: 1px solid white;
+                height: 106px;
+                margin-top: 55px;
+                padding: 0px 100px 0px 100px;
+                align-items: center;
+                transition: 0.3s;
+                &-txt{
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 16px;
+                    text-align: center;
+                    letter-spacing: 0.0357143em;
+                    text-transform: uppercase;
+                    color: white;
+                    transition: 0.3s;
+                }
+                &-pic{
+                    margin-left:14px;
+                }
+                .footer__connect-button-pic_blue{
+                    display: none;
+                    transition: 0.3s;
+                }
+                &:hover{
+                    transition: 0.3s;
+                    border: 1px solid #8B6AFC;
+                    .footer__connect-button-txt{
+                        color: #8B6AFC;
+                        transition: 0.3s;
+                    }
+                    .footer__connect-button-pic{
+                        display: none;
+                    }
+                    .footer__connect-button-pic_blue{
+                        margin-left:14px;
+                        display: block;
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+        &__content{
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            &-logo{
+                text-align: center;
+                &-pic{
+                    width: 82px;
+                    height: 71px;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: #FFFFFF;
+                    line-height: 34px;
+                }
+            }
+            &-menu{
+                padding: 0px;
+                margin: 0px;
+                list-style: none;
+                &-item{
+                    margin-bottom: 15px;
+                    &-link{
+                        &-pic{
+                            transition: 0.3s;
+                            opacity: 0;
+                        }
+                        &:hover{
+                            .footer__content-menu-item-link-pic{
+                                transition: 0.3s;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            &-buttons{
+                display: flex;
+                align-items: center;
+                &-mail{
+                    width: 48px;
+                    height: 48px;
+                    border: 1px solid white;
+                    border-radius:50%;
+                    margin-right: 40px;
+                    transition: 0.3s;
+                    &:hover{
+                        transition: 0.3s;
+                        border: 1px solid #8B6AFC;
+                        background-color: #8B6AFC;
+                    }
+                }
+                &-telegramm{
+                    width: 48px;
+                    height: 48px;
+                    border: 1px solid white;
+                    border-radius:50%;
+                    transition: 0.3s;
+                    &:hover{
+                        transition: 0.3s;
+                        border: 1px solid #8B6AFC;
+                        background-color: #8B6AFC;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px){
+    html, body {
+        overflow-x:hidden 
+      } 
+
+    .container {
+        width: 80vw;
+        margin: 0 auto;
+    }
+    
+    p{
+        margin: 0 ;
+        padding: 0;
+    }
+    
+    h1,h2{
+        margin: 0 ;
+        padding: 0;
+    }
+    
+    button{
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+    
+    a{
+        margin: 0;
+        padding: 0;
+        color: white;
+        text-decoration: none;
+        font-family: 'SourceCodePro';
+        font-weight: 500;
+    }
+    
+    .header{
+        background-color: transparent;
+        position: fixed;
+        margin: 0 auto;
+        margin-top: 34px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        mix-blend-mode: difference;
+        .container_header{
+            width: 100vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0px 0px 0px 0px;
+        }
+        &__logo{
+            width: 5vw;
+            padding-left: 20px;
+        }
+        &__menu{
+            display: none;
+            margin-left: 0px;
+            padding: 0;
+            list-style-type: none;
+            &-item{
+                display: inline-block;
+                margin-right: 74px;
+                &-link{
+                    position: relative;
+                    &-pic{
+                        left: -30px;
+                        top: 6px;
+                        position: absolute;
+                        opacity: 0;
+                        transition: 0.3s;
+                    }
+                    &:hover{
+                        .header__menu-item-link-pic{     
+                            opacity: 1;
+                            transition: 0.3s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .header__menu-button{
+        padding-right: 20px;
+        display: flex;
+        justify-content:space-between;
+        height: 26px;
+        width: 32px;
+        flex-direction: column;
+        &_line{
+            display: block;
+            height: 4px;
+            width: 100%;
+            border-radius: 10px;
+            background: #ffffff;
+        }
+    }
+    
+    .header__menu-mobile{
+        display: none;
+    }
+    
+    .main{
+        background: url(/src/img/background.png);
+        background-size: cover;
+        background-repeat:no-repeat;
+        height: 100vh;
+        position: relative;
+        &__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 121px;
+            &-title{
+                color: white;
+                font-family: 'SourceCodePro';
+                font-weight: 800;
+                font-size: 52px;
+                line-height: 98px;
+                -webkit-text-stroke:2px rgba(192, 124, 245, 0.7);
+                &-span{
+                    font-size: 64px;
+                    -webkit-text-stroke:2px rgba(192, 124, 245, 0.7);
+                    color: transparent;
+                }
+            }
+            &-robot{
+                width: 70%;
+            }
+            
+        }
+        &__bottom{
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            &-button{
+                &-txt{
+                    color: white;
+                    font-family: 'SourceCodePro';
+                    font-size: 20px;
+                    font-weight: 500;
+                    margin-bottom:12px;
+                }
+            }
+        }
+    }
+    
+    .about{
+        height: auto;
+        background: linear-gradient(180deg, #0F1217 30.21%, #1D2229 100%);
+        &__title{
+            font-family:'SourceCodePro';
+            font-size: 42px;
+            line-height: 98px;
+            color: #8B6AFC;
+            font-weight: 500;
+            padding-top:55px;
+            text-align: center;
+        }
+        &__content{
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 50px;
+            &-txt{
+                font-size: 15px;
+                font-family:'SourceCodePro';
+                font-weight: 400;
+                color: #FFFFFF;
+                width: 100%;
+                line-height: 34px;
+            }
+            &-pic{
+                width: 90%;
+            }
+        }
+    }
+    
+    .app{
+        height: auto;
+        background: #F8F8F8;
+        position: relative;
+        padding-bottom: 50px;
+        &__right{
+            margin-left: 0px;
+        }
+        &__title{
+            font-family:'SourceCodePro';
+            font-size: 36px;
+            line-height: 98px;
+            color: #8B6AFC;
+            font-weight: 500;
+            padding-top:55px;
+            text-align: center;
+    
+        }
+        &__hand{
+            display: none;
+            position: absolute;
+            top: 0px;
+            right: -20vw;
+            z-index: 0;
+            transition: 0.5s;
+        }
+        &__content{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            &-block{
+                width: 100%;
+                margin-top:18px;
+                &-title{
+                    font-family: 'SourceCodePro';
+                    color: black;
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 98px;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: black;
+                    font-size: 21px;
+                    width: 100%;
+                    line-height: 34px;
+                }
+    
+            }
+            &-button{
+                display: flex;
+                border: 1px solid #8B6AFC;
+                margin-top: 30px;
+                padding: 20px 120px 20px 120px;
+                align-items: center;
+                transition: 0.3s;
+                &-txt{
+                    transition: 0.3s;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 16px;
+                    text-align: center;
+                    letter-spacing: 0.0357143em;
+                    text-transform: uppercase;
+                    color: #8B6AFC;
+                }
+                &-pic{
+                    margin-left:14px;
+                    &-white{
+                        display: none;
+                    }
+                }
+                &:hover{
+                    transition: 0.3s;
+                    background-color:#8B6AFC;
+                    .app__content-button-txt{
+                        transition: 0.3s;
+                        color: white;
+                    }
+                    .app__content-button-pic{
+                        display: none;
+                    }
+                    .app__content-button-pic-white{
+                        display: block;
+                        margin-left:14px;
+                    }
+                }
+            }
+            &-bullet{
+                display: none;
+                margin-top: 20px;
+                position: relative;
+                z-index: 2;
+                right:0;
+                top: 0;
+                transition: 0.5s;
+                &_top{
+                    top: 0;
+                    right: 0;
+                }
+                &_middle{
+                    top: 0;
+                }
+                &_bottom{
+                    top: 0;
+                    right: 0;
+                }
+                background-color: white;
+                border: 1px solid #8B6AFC;
+                width: 287px;
+                height: 124px;
+                &:hover{
+                    border-bottom: 4px solid #8B6AFC;
+                    border-right: 4px solid #8B6AFC;
+                    transition: 0.5s;
+                }
+                &-content{
+                    top:0px;
+                    &-title{
+                        text-align: right;
+                        font-family:'SourceCodePro';
+                        font-size: 36px;
+                        line-height: 32px;
+                        color: #8B6AFC;
+                        font-weight: 500;
+                        padding: 10px 20px 0px 20px;
+                    }
+                    &-txt{
+                        margin-top: 5px;
+                        font-family:'SourceCodePro';
+                        font-weight: 400;
+                        color: black;
+                        line-height: 34px;
+                        font-size: 14px;
+                        padding: 0px 30px 10px 30px;
+                    }
+    
+                }
+            }
+        }
+    }
+    
+    .documentation{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: auto;
+        background: #F8F8F8;
+        &__block{
+            display: block;
+            width: 100%;
+            height: auto;
+            background-color: #8B6AFC;
+            &-content{
+                padding-top: 20px;
+                padding-left: 36px;
+                padding-bottom: 20px;
+                padding-right: 36px;
+                &-title{
+                    font-family:'SourceCodePro';
+                    font-size: 24px;
+                    line-height: 40px;
+                    color: white;
+                    font-weight: 500;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: white;
+                    font-size:21px;
+                    line-height: 34px;
+                    width: 100%
+                }
+                &-button{
+                    margin-top: 25px;
+                    display: flex;
+                    border: 1px solid white;
+                    padding: 10px 80px 10px 80px;
+                    align-items: center;
+                    &-txt{
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 16px;
+                        text-align: center;
+                        letter-spacing: 0.0357143em;
+                        text-transform: uppercase;
+                        color: white;
+                    }
+                    &-pic{
+                        margin-left:14px;
+                    }
+                }
+            }
+        }
+    }
+    
+    .tariff{
+        height: auto;
+        background: #F8F8F8;
+        &__title{
+            font-family:'SourceCodePro';
+            font-size: 36px;
+            line-height: 98px;
+            color: #8B6AFC;
+            font-weight: 500;
+            padding-top:55px;
+            text-align: right;
+        }
+        &__txt{
+            font-family:'SourceCodePro';
+            font-weight: 400;
+            color: black;
+            font-size:21px;
+            line-height: 34px;
+            margin-top: 34px;
+            text-align: right;
+        }
+        &__plans{
+            display: flex;
+            justify-content:space-between;
+            flex-direction: column;
+            margin-top: 40px;
+            padding-bottom: 40px;
+            &-items{
+                margin-bottom: 40px;
+                &-title{
+                    text-align: center;
+                    margin-top:40px;
+                    font-family:'SourceCodePro';
+                    font-size: 24px;
+                    line-height: 98px;
+                    color: black;
+                    font-weight: 500;
+                }
+                &-txt{
+                    text-align: center;
+                    font-family:'SourceCodePro';
+                    font-size: 21px;
+                    font-weight: 400;
+                    color: black;
+                    line-height: 34px;
+                    padding: 0px 10px 0px 10px;
+                }
+                &-button{
+                    display: block;
+                    text-align: center;
+                    margin: 0 auto;
+                    border: 1px solid rgba(15, 18, 23, 0.2);
+                    margin-top: 30px;
+                    padding: 8px 50px 8px 50px;
+                    text-align: center;
+                    font-family:'SourceCodePro';
+                    font-weight: 500;
+                    font-size: 21px;
+                    color: rgba(15, 18, 23, 0.2);
+                    line-height: 34px;             
+                    text-transform: uppercase;
+                    transition: 0.3s;
+                    &:hover{
+                        color: #8B6AFC;
+                        border:1px solid #8B6AFC;
+                        transition: 0.3s;
+                    }
+                }
+                &_left{
+                    display: block;
+                    width: 100%;
+                    height: 304px;
+                    border: 5px solid rgba(15, 18, 23, 0.2);
+                    z-index:1;
+                    position:relative;
+                    transition: 0.5s;
+                    &:hover{
+                        border:5px solid #8B6AFC;
+                        transition: 0.3s;
+                    }
+                    &:before {
+                        position:absolute;
+                        top:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                     &:after {
+                        position:absolute;
+                        bottom:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                }
+                &_middle{
+                    display: block;
+                    width: 100%;
+                    height: 304px;
+                    border: 5px solid rgba(15, 18, 23, 0.2);
+                    z-index:1;
+                    position:relative;
+                    transition: 0.5s;
+                    &:hover{
+                        border:5px solid #8B6AFC;
+                        transition: 0.5s;
+                    }
+                    &:before {
+                        position:absolute;
+                        top:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                     &:after {
+                        position:absolute;
+                        bottom:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                }
+                &_right{
+                    display: block;
+                    width: 100%;
+                    height: 304px;
+                    border: 5px solid rgba(15, 18, 23, 0.2);
+                    z-index:1;
+                    position:relative;
+                    transition: 0.5s;
+                    &:hover{
+                        border:5px solid #8B6AFC;
+                        transition: 0.5s;
+                    }
+                    &:before {
+                        position:absolute;
+                        top:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                     &:after {
+                        position:absolute;
+                        bottom:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                }
+            }
+        }
+    }
+    
+    .footer{
+        background-color:#0F1217;
+        height: auto;
+        &__divider{
+            display:block;
+            width: 100%;
+            background-color: white;
+            height: 1px;
+            margin-top:55px;
+            margin-bottom:20px;
+        }
+        &__connect{
+                padding-top:55px;
+                display: flex;
+                justify-content:space-between;
+                flex-direction: column;
+            &-block{
+                &-title{
+                    font-family:'SourceCodePro';
+                    font-size: 36px;
+                    line-height: 46px;
+                    color: white;
+                    font-weight: 500;
+                    text-align: left;
+                    width: 100%;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: #FFFFFF;
+                    width: 100%;
+                    line-height: 34px;
+                    margin-top: 22px;
+                }
+            }
+            &-button{
+                display: flex;
+                border: 1px solid white;
+                height: 106px;
+                margin-top: 55px;
+                padding: 0px 100px 0px 100px;
+                align-items: center;
+                transition: 0.3s;
+                &-txt{
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 16px;
+                    text-align: center;
+                    letter-spacing: 0.0357143em;
+                    text-transform: uppercase;
+                    color: white;
+                    transition: 0.3s;
+                }
+                &-pic{
+                    margin-left:14px;
+                }
+                .footer__connect-button-pic_blue{
+                    display: none;
+                    transition: 0.3s;
+                }
+                &:hover{
+                    transition: 0.3s;
+                    border: 1px solid #8B6AFC;
+                    .footer__connect-button-txt{
+                        color: #8B6AFC;
+                        transition: 0.3s;
+                    }
+                    .footer__connect-button-pic{
+                        display: none;
+                    }
+                    .footer__connect-button-pic_blue{
+                        margin-left:14px;
+                        display: block;
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+        &__content{
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            flex-direction: column;
+            &-logo{
+                margin-bottom: 50px;
+                text-align: center;
+                &-pic{
+                    width: 50px;
+                    height: 50px;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: #FFFFFF;
+                    line-height: 34px;
+                }
+            }
+            &-menu{
+                padding: 0px;
+                margin: 0px;
+                list-style: none;
+                margin-bottom: 25px;
+                &-item{
+                    display: inline-block;
+                    margin-bottom: 15px;
+                    &-link{
+                        &-pic{
+                            transition: 0.3s;
+                            opacity: 0;
+                        }
+                        &:hover{
+                            .footer__content-menu-item-link-pic{
+                                transition: 0.3s;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            &-buttons{
+                margin-top: 55px;
+                display: flex;
+                align-items: center;
+                padding-bottom: 55px;
+                &-mail{
+                    width: 48px;
+                    height: 48px;
+                    border: 1px solid white;
+                    border-radius:50%;
+                    margin-right: 40px;
+                    transition: 0.3s;
+                    &:hover{
+                        transition: 0.3s;
+                        border: 1px solid #8B6AFC;
+                        background-color: #8B6AFC;
+                    }
+                }
+                &-telegramm{
+                    width: 48px;
+                    height: 48px;
+                    border: 1px solid white;
+                    border-radius:50%;
+                    transition: 0.3s;
+                    &:hover{
+                        transition: 0.3s;
+                        border: 1px solid #8B6AFC;
+                        background-color: #8B6AFC;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 375px) and (max-width: 479px){
+    html, body {
+        overflow-x:hidden 
+      } 
+
+    .container {
+        width: 80vw;
+        margin: 0 auto;
+    }
+    
+    p{
+        margin: 0 ;
+        padding: 0;
+    }
+    
+    h1,h2{
+        margin: 0 ;
+        padding: 0;
+    }
+    
+    button{
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+    
+    a{
+        margin: 0;
+        padding: 0;
+        color: white;
+        text-decoration: none;
+        font-family: 'SourceCodePro';
+        font-weight: 500;
+    }
+    
+    .header{
+        background-color: transparent;
+        position: fixed;
+        margin: 0 auto;
+        margin-top: 34px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        mix-blend-mode: difference;
+        .container_header{
+            width: 100vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0px 0px 0px 0px;
+        }
+        &__logo{
+            width: 5vw;
+            padding-left: 20px;
+        }
+        &__menu{
+            display: none;
+            margin-left: 0px;
+            padding: 0;
+            list-style-type: none;
+            &-item{
+                display: inline-block;
+                margin-right: 74px;
+                &-link{
+                    position: relative;
+                    &-pic{
+                        left: -30px;
+                        top: 6px;
+                        position: absolute;
+                        opacity: 0;
+                        transition: 0.3s;
+                    }
+                    &:hover{
+                        .header__menu-item-link-pic{     
+                            opacity: 1;
+                            transition: 0.3s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .header__menu-button{
+        padding-right: 20px;
+        display: flex;
+        justify-content:space-between;
+        height: 26px;
+        width: 32px;
+        flex-direction: column;
+        &_line{
+            display: block;
+            height: 4px;
+            width: 100%;
+            border-radius: 10px;
+            background: #ffffff;
+        }
+    }
+    
+    .header__menu-mobile{
+        display: none;
+    }
+    
+    .main{
+        background: url(/src/img/background.png);
+        background-size: cover;
+        background-repeat:no-repeat;
+        height: 100vh;
+        position: relative;
+        &__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 121px;
+            &-title{
+                color: white;
+                font-family: 'SourceCodePro';
+                font-weight: 800;
+                font-size: 52px;
+                line-height: 98px;
+                -webkit-text-stroke:2px rgba(192, 124, 245, 0.7);
+                &-span{
+                    font-size: 64px;
+                    -webkit-text-stroke:2px rgba(192, 124, 245, 0.7);
+                    color: transparent;
+                }
+            }
+            &-robot{
+                width: 70%;
+            }
+            
+        }
+        &__bottom{
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            &-button{
+                &-txt{
+                    color: white;
+                    font-family: 'SourceCodePro';
+                    font-size: 20px;
+                    font-weight: 500;
+                    margin-bottom:12px;
+                }
+            }
+        }
+    }
+    
+    .about{
+        height: auto;
+        background: linear-gradient(180deg, #0F1217 30.21%, #1D2229 100%);
+        &__title{
+            font-family:'SourceCodePro';
+            font-size: 42px;
+            line-height: 98px;
+            color: #8B6AFC;
+            font-weight: 500;
+            padding-top:55px;
+            text-align: center;
+        }
+        &__content{
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 50px;
+            &-txt{
+                font-size: 15px;
+                font-family:'SourceCodePro';
+                font-weight: 400;
+                color: #FFFFFF;
+                width: 100%;
+                line-height: 34px;
+            }
+            &-pic{
+                width: 90%;
+            }
+        }
+    }
+    
+    .app{
+        height: auto;
+        background: #F8F8F8;
+        position: relative;
+        padding-bottom: 50px;
+        &__right{
+            margin-left: 0px;
+        }
+        &__title{
+            font-family:'SourceCodePro';
+            font-size: 36px;
+            line-height: 98px;
+            color: #8B6AFC;
+            font-weight: 500;
+            padding-top:55px;
+            text-align: center;
+    
+        }
+        &__hand{
+            display: none;
+            position: absolute;
+            top: 0px;
+            right: -20vw;
+            z-index: 0;
+            transition: 0.5s;
+        }
+        &__content{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            &-block{
+                width: 100%;
+                margin-top:18px;
+                &-title{
+                    font-family: 'SourceCodePro';
+                    color: black;
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 98px;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: black;
+                    font-size: 21px;
+                    width: 100%;
+                    line-height: 34px;
+                }
+    
+            }
+            &-button{
+                display: flex;
+                border: 1px solid #8B6AFC;
+                margin-top: 30px;
+                padding: 20px 120px 20px 120px;
+                align-items: center;
+                transition: 0.3s;
+                &-txt{
+                    transition: 0.3s;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 16px;
+                    text-align: center;
+                    letter-spacing: 0.0357143em;
+                    text-transform: uppercase;
+                    color: #8B6AFC;
+                }
+                &-pic{
+                    margin-left:14px;
+                    &-white{
+                        display: none;
+                    }
+                }
+                &:hover{
+                    transition: 0.3s;
+                    background-color:#8B6AFC;
+                    .app__content-button-txt{
+                        transition: 0.3s;
+                        color: white;
+                    }
+                    .app__content-button-pic{
+                        display: none;
+                    }
+                    .app__content-button-pic-white{
+                        display: block;
+                        margin-left:14px;
+                    }
+                }
+            }
+            &-bullet{
+                display: none;
+                margin-top: 20px;
+                position: relative;
+                z-index: 2;
+                right:0;
+                top: 0;
+                transition: 0.5s;
+                &_top{
+                    top: 0;
+                    right: 0;
+                }
+                &_middle{
+                    top: 0;
+                }
+                &_bottom{
+                    top: 0;
+                    right: 0;
+                }
+                background-color: white;
+                border: 1px solid #8B6AFC;
+                width: 287px;
+                height: 124px;
+                &:hover{
+                    border-bottom: 4px solid #8B6AFC;
+                    border-right: 4px solid #8B6AFC;
+                    transition: 0.5s;
+                }
+                &-content{
+                    top:0px;
+                    &-title{
+                        text-align: right;
+                        font-family:'SourceCodePro';
+                        font-size: 36px;
+                        line-height: 32px;
+                        color: #8B6AFC;
+                        font-weight: 500;
+                        padding: 10px 20px 0px 20px;
+                    }
+                    &-txt{
+                        margin-top: 5px;
+                        font-family:'SourceCodePro';
+                        font-weight: 400;
+                        color: black;
+                        line-height: 34px;
+                        font-size: 14px;
+                        padding: 0px 30px 10px 30px;
+                    }
+    
+                }
+            }
+        }
+    }
+    
+    .documentation{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: auto;
+        background: #F8F8F8;
+        &__block{
+            display: block;
+            width: 100%;
+            height: auto;
+            background-color: #8B6AFC;
+            &-content{
+                padding-top: 20px;
+                padding-left: 36px;
+                padding-bottom: 20px;
+                padding-right: 36px;
+                &-title{
+                    font-family:'SourceCodePro';
+                    font-size: 24px;
+                    line-height: 40px;
+                    color: white;
+                    font-weight: 500;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: white;
+                    font-size:21px;
+                    line-height: 34px;
+                    width: 100%
+                }
+                &-button{
+                    margin-top: 25px;
+                    display: flex;
+                    border: 1px solid white;
+                    padding: 10px 80px 10px 80px;
+                    align-items: center;
+                    &-txt{
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 16px;
+                        text-align: center;
+                        letter-spacing: 0.0357143em;
+                        text-transform: uppercase;
+                        color: white;
+                    }
+                    &-pic{
+                        margin-left:14px;
+                    }
+                }
+            }
+        }
+    }
+    
+    .tariff{
+        height: auto;
+        background: #F8F8F8;
+        &__title{
+            font-family:'SourceCodePro';
+            font-size: 36px;
+            line-height: 98px;
+            color: #8B6AFC;
+            font-weight: 500;
+            padding-top:55px;
+            text-align: right;
+        }
+        &__txt{
+            font-family:'SourceCodePro';
+            font-weight: 400;
+            color: black;
+            font-size:21px;
+            line-height: 34px;
+            margin-top: 34px;
+            text-align: right;
+        }
+        &__plans{
+            display: flex;
+            justify-content:space-between;
+            flex-direction: column;
+            margin-top: 40px;
+            padding-bottom: 40px;
+            &-items{
+                margin-bottom: 40px;
+                &-title{
+                    text-align: center;
+                    margin-top:40px;
+                    font-family:'SourceCodePro';
+                    font-size: 24px;
+                    line-height: 98px;
+                    color: black;
+                    font-weight: 500;
+                }
+                &-txt{
+                    text-align: center;
+                    font-family:'SourceCodePro';
+                    font-size: 21px;
+                    font-weight: 400;
+                    color: black;
+                    line-height: 34px;
+                }
+                &-button{
+                    display: block;
+                    text-align: center;
+                    margin: 0 auto;
+                    border: 1px solid rgba(15, 18, 23, 0.2);
+                    margin-top: 30px;
+                    padding: 8px 50px 8px 50px;
+                    text-align: center;
+                    font-family:'SourceCodePro';
+                    font-weight: 500;
+                    font-size: 21px;
+                    color: rgba(15, 18, 23, 0.2);
+                    line-height: 34px;             
+                    text-transform: uppercase;
+                    transition: 0.3s;
+                    &:hover{
+                        color: #8B6AFC;
+                        border:1px solid #8B6AFC;
+                        transition: 0.3s;
+                    }
+                }
+                &_left{
+                    display: block;
+                    width: 100%;
+                    height: 320px;
+                    border: 5px solid rgba(15, 18, 23, 0.2);
+                    z-index:1;
+                    position:relative;
+                    transition: 0.5s;
+                    &:hover{
+                        border:5px solid #8B6AFC;
+                        transition: 0.3s;
+                    }
+                    &:before {
+                        position:absolute;
+                        top:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                     &:after {
+                        position:absolute;
+                        bottom:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                }
+                &_middle{
+                    display: block;
+                    width: 100%;
+                    height: 304px;
+                    border: 5px solid rgba(15, 18, 23, 0.2);
+                    z-index:1;
+                    position:relative;
+                    transition: 0.5s;
+                    &:hover{
+                        border:5px solid #8B6AFC;
+                        transition: 0.5s;
+                    }
+                    &:before {
+                        position:absolute;
+                        top:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                     &:after {
+                        position:absolute;
+                        bottom:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                }
+                &_right{
+                    display: block;
+                    width: 100%;
+                    height: 304px;
+                    border: 5px solid rgba(15, 18, 23, 0.2);
+                    z-index:1;
+                    position:relative;
+                    transition: 0.5s;
+                    &:hover{
+                        border:5px solid #8B6AFC;
+                        transition: 0.5s;
+                    }
+                    &:before {
+                        position:absolute;
+                        top:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                     &:after {
+                        position:absolute;
+                        bottom:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                }
+            }
+        }
+    }
+    
+    .footer{
+        background-color:#0F1217;
+        height: auto;
+        &__divider{
+            display:block;
+            width: 100%;
+            background-color: white;
+            height: 1px;
+            margin-top:55px;
+            margin-bottom:20px;
+        }
+        &__connect{
+                padding-top:55px;
+                display: flex;
+                justify-content:space-between;
+                flex-direction: column;
+            &-block{
+                &-title{
+                    font-family:'SourceCodePro';
+                    font-size: 36px;
+                    line-height: 46px;
+                    color: white;
+                    font-weight: 500;
+                    text-align: left;
+                    width: 100%;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: #FFFFFF;
+                    width: 100%;
+                    line-height: 34px;
+                    margin-top: 22px;
+                }
+            }
+            &-button{
+                display: flex;
+                border: 1px solid white;
+                height: 106px;
+                margin-top: 55px;
+                padding: 0px 100px 0px 100px;
+                align-items: center;
+                transition: 0.3s;
+                &-txt{
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 16px;
+                    text-align: center;
+                    letter-spacing: 0.0357143em;
+                    text-transform: uppercase;
+                    color: white;
+                    transition: 0.3s;
+                }
+                &-pic{
+                    margin-left:14px;
+                }
+                .footer__connect-button-pic_blue{
+                    display: none;
+                    transition: 0.3s;
+                }
+                &:hover{
+                    transition: 0.3s;
+                    border: 1px solid #8B6AFC;
+                    .footer__connect-button-txt{
+                        color: #8B6AFC;
+                        transition: 0.3s;
+                    }
+                    .footer__connect-button-pic{
+                        display: none;
+                    }
+                    .footer__connect-button-pic_blue{
+                        margin-left:14px;
+                        display: block;
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+        &__content{
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            flex-direction: column;
+            &-logo{
+                margin-bottom: 50px;
+                text-align: center;
+                &-pic{
+                    width: 50px;
+                    height: 50px;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: #FFFFFF;
+                    line-height: 34px;
+                }
+            }
+            &-menu{
+                padding: 0px;
+                margin: 0px;
+                list-style: none;
+                margin-bottom: 25px;
+                &-item{
+                    display: inline-block;
+                    margin-bottom: 15px;
+                    &-link{
+                        &-pic{
+                            transition: 0.3s;
+                            opacity: 0;
+                        }
+                        &:hover{
+                            .footer__content-menu-item-link-pic{
+                                transition: 0.3s;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            &-buttons{
+                margin-top: 55px;
+                display: flex;
+                align-items: center;
+                padding-bottom: 55px;
+                &-mail{
+                    width: 48px;
+                    height: 48px;
+                    border: 1px solid white;
+                    border-radius:50%;
+                    margin-right: 40px;
+                    transition: 0.3s;
+                    &:hover{
+                        transition: 0.3s;
+                        border: 1px solid #8B6AFC;
+                        background-color: #8B6AFC;
+                    }
+                }
+                &-telegramm{
+                    width: 48px;
+                    height: 48px;
+                    border: 1px solid white;
+                    border-radius:50%;
+                    transition: 0.3s;
+                    &:hover{
+                        transition: 0.3s;
+                        border: 1px solid #8B6AFC;
+                        background-color: #8B6AFC;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 320px) and (max-width: 374px){
+    html, body {
+        overflow-x:hidden 
+      } 
+
+    .container {
+        width: 80vw;
+        margin: 0 auto;
+    }
+    
+    p{
+        margin: 0 ;
+        padding: 0;
+    }
+    
+    h1,h2{
+        margin: 0 ;
+        padding: 0;
+    }
+    
+    button{
+        border: none;
+        background: transparent;
+        cursor: pointer;
+    }
+    
+    a{
+        margin: 0;
+        padding: 0;
+        color: white;
+        text-decoration: none;
+        font-family: 'SourceCodePro';
+        font-weight: 500;
+    }
+    
+    .header{
+        background-color: transparent;
+        position: fixed;
+        margin: 0 auto;
+        margin-top: 34px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        mix-blend-mode: difference;
+        .container_header{
+            width: 100vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0px 0px 0px 0px;
+        }
+        &__logo{
+            width: 5vw;
+            padding-left: 20px;
+        }
+        &__menu{
+            display: none;
+            margin-left: 0px;
+            padding: 0;
+            list-style-type: none;
+            &-item{
+                display: inline-block;
+                margin-right: 74px;
+                &-link{
+                    position: relative;
+                    &-pic{
+                        left: -30px;
+                        top: 6px;
+                        position: absolute;
+                        opacity: 0;
+                        transition: 0.3s;
+                    }
+                    &:hover{
+                        .header__menu-item-link-pic{     
+                            opacity: 1;
+                            transition: 0.3s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .header__menu-button{
+        padding-right: 20px;
+        display: flex;
+        justify-content:space-between;
+        height: 26px;
+        width: 32px;
+        flex-direction: column;
+        &_line{
+            display: block;
+            height: 4px;
+            width: 100%;
+            border-radius: 10px;
+            background: #ffffff;
+        }
+    }
+    
+    .header__menu-mobile{
+        display: none;
+    }
+    
+    .main{
+        background: url(/src/img/background.png);
+        background-size: cover;
+        background-repeat:no-repeat;
+        height: 100vh;
+        position: relative;
+        &__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 121px;
+            &-title{
+                color: white;
+                font-family: 'SourceCodePro';
+                font-weight: 800;
+                font-size: 52px;
+                line-height: 98px;
+                -webkit-text-stroke:2px rgba(192, 124, 245, 0.7);
+                &-span{
+                    font-size: 64px;
+                    -webkit-text-stroke:2px rgba(192, 124, 245, 0.7);
+                    color: transparent;
+                }
+            }
+            &-robot{
+                width: 70%;
+            }
+            
+        }
+        &__bottom{
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            &-button{
+                &-txt{
+                    color: white;
+                    font-family: 'SourceCodePro';
+                    font-size: 20px;
+                    font-weight: 500;
+                    margin-bottom:12px;
+                }
+            }
+        }
+    }
+    
+    .about{
+        height: auto;
+        background: linear-gradient(180deg, #0F1217 30.21%, #1D2229 100%);
+        &__title{
+            font-family:'SourceCodePro';
+            font-size: 42px;
+            line-height: 98px;
+            color: #8B6AFC;
+            font-weight: 500;
+            padding-top:55px;
+            text-align: center;
+        }
+        &__content{
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 50px;
+            &-txt{
+                font-size: 15px;
+                font-family:'SourceCodePro';
+                font-weight: 400;
+                color: #FFFFFF;
+                width: 100%;
+                line-height: 34px;
+            }
+            &-pic{
+                width: 90%;
+            }
+        }
+    }
+    
+    .app{
+        height: auto;
+        background: #F8F8F8;
+        position: relative;
+        padding-bottom: 50px;
+        &__right{
+            margin-left: 0px;
+        }
+        &__title{
+            font-family:'SourceCodePro';
+            font-size: 36px;
+            line-height: 98px;
+            color: #8B6AFC;
+            font-weight: 500;
+            padding-top:55px;
+            text-align: center;
+    
+        }
+        &__hand{
+            display: none;
+            position: absolute;
+            top: 0px;
+            right: -20vw;
+            z-index: 0;
+            transition: 0.5s;
+        }
+        &__content{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            &-block{
+                width: 100%;
+                margin-top:18px;
+                &-title{
+                    font-family: 'SourceCodePro';
+                    color: black;
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 98px;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: black;
+                    font-size: 21px;
+                    width: 100%;
+                    line-height: 34px;
+                }
+    
+            }
+            &-button{
+                display: flex;
+                border: 1px solid #8B6AFC;
+                margin-top: 30px;
+                padding: 20px 120px 20px 120px;
+                align-items: center;
+                transition: 0.3s;
+                &-txt{
+                    transition: 0.3s;
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 16px;
+                    text-align: center;
+                    letter-spacing: 0.0357143em;
+                    text-transform: uppercase;
+                    color: #8B6AFC;
+                }
+                &-pic{
+                    margin-left:14px;
+                    &-white{
+                        display: none;
+                    }
+                }
+                &:hover{
+                    transition: 0.3s;
+                    background-color:#8B6AFC;
+                    .app__content-button-txt{
+                        transition: 0.3s;
+                        color: white;
+                    }
+                    .app__content-button-pic{
+                        display: none;
+                    }
+                    .app__content-button-pic-white{
+                        display: block;
+                        margin-left:14px;
+                    }
+                }
+            }
+            &-bullet{
+                display: none;
+                margin-top: 20px;
+                position: relative;
+                z-index: 2;
+                right:0;
+                top: 0;
+                transition: 0.5s;
+                &_top{
+                    top: 0;
+                    right: 0;
+                }
+                &_middle{
+                    top: 0;
+                }
+                &_bottom{
+                    top: 0;
+                    right: 0;
+                }
+                background-color: white;
+                border: 1px solid #8B6AFC;
+                width: 287px;
+                height: 124px;
+                &:hover{
+                    border-bottom: 4px solid #8B6AFC;
+                    border-right: 4px solid #8B6AFC;
+                    transition: 0.5s;
+                }
+                &-content{
+                    top:0px;
+                    &-title{
+                        text-align: right;
+                        font-family:'SourceCodePro';
+                        font-size: 36px;
+                        line-height: 32px;
+                        color: #8B6AFC;
+                        font-weight: 500;
+                        padding: 10px 20px 0px 20px;
+                    }
+                    &-txt{
+                        margin-top: 5px;
+                        font-family:'SourceCodePro';
+                        font-weight: 400;
+                        color: black;
+                        line-height: 34px;
+                        font-size: 14px;
+                        padding: 0px 30px 10px 30px;
+                    }
+    
+                }
+            }
+        }
+    }
+    
+    .documentation{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        height: auto;
+        background: #F8F8F8;
+        &__block{
+            display: block;
+            width: 100%;
+            height: auto;
+            background-color: #8B6AFC;
+            &-content{
+                padding-top: 20px;
+                padding-left: 36px;
+                padding-bottom: 20px;
+                padding-right: 36px;
+                &-title{
+                    font-family:'SourceCodePro';
+                    font-size: 24px;
+                    line-height: 40px;
+                    color: white;
+                    font-weight: 500;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: white;
+                    font-size:21px;
+                    line-height: 34px;
+                    width: 100%
+                }
+                &-button{
+                    margin-top: 25px;
+                    display: flex;
+                    border: 1px solid white;
+                    padding: 10px 80px 10px 80px;
+                    align-items: center;
+                    &-txt{
+                        font-weight: 500;
+                        font-size: 14px;
+                        line-height: 16px;
+                        text-align: center;
+                        letter-spacing: 0.0357143em;
+                        text-transform: uppercase;
+                        color: white;
+                    }
+                    &-pic{
+                        margin-left:14px;
+                    }
+                }
+            }
+        }
+    }
+    
+    .tariff{
+        height: auto;
+        background: #F8F8F8;
+        &__title{
+            font-family:'SourceCodePro';
+            font-size: 36px;
+            line-height: 98px;
+            color: #8B6AFC;
+            font-weight: 500;
+            padding-top:55px;
+            text-align: right;
+        }
+        &__txt{
+            font-family:'SourceCodePro';
+            font-weight: 400;
+            color: black;
+            font-size:21px;
+            line-height: 34px;
+            margin-top: 34px;
+            text-align: right;
+        }
+        &__plans{
+            display: flex;
+            justify-content:space-between;
+            flex-direction: column;
+            margin-top: 40px;
+            padding-bottom: 40px;
+            &-items{
+                margin-bottom: 40px;
+                &-title{
+                    text-align: center;
+                    margin-top:40px;
+                    font-family:'SourceCodePro';
+                    font-size: 24px;
+                    line-height: 98px;
+                    color: black;
+                    font-weight: 500;
+                }
+                &-txt{
+                    text-align: center;
+                    font-family:'SourceCodePro';
+                    font-size: 21px;
+                    font-weight: 400;
+                    color: black;
+                    line-height: 34px;
+                }
+                &-button{
+                    display: block;
+                    text-align: center;
+                    margin: 0 auto;
+                    border: 1px solid rgba(15, 18, 23, 0.2);
+                    margin-top: 30px;
+                    padding: 8px 50px 8px 50px;
+                    text-align: center;
+                    font-family:'SourceCodePro';
+                    font-weight: 500;
+                    font-size: 21px;
+                    color: rgba(15, 18, 23, 0.2);
+                    line-height: 34px;             
+                    text-transform: uppercase;
+                    transition: 0.3s;
+                    &:hover{
+                        color: #8B6AFC;
+                        border:1px solid #8B6AFC;
+                        transition: 0.3s;
+                    }
+                }
+                &_left{
+                    display: block;
+                    width: 100%;
+                    height: 320px;
+                    border: 5px solid rgba(15, 18, 23, 0.2);
+                    z-index:1;
+                    position:relative;
+                    transition: 0.5s;
+                    &:hover{
+                        border:5px solid #8B6AFC;
+                        transition: 0.3s;
+                    }
+                    &:before {
+                        position:absolute;
+                        top:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                     &:after {
+                        position:absolute;
+                        bottom:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                }
+                &_middle{
+                    display: block;
+                    width: 100%;
+                    height: 304px;
+                    border: 5px solid rgba(15, 18, 23, 0.2);
+                    z-index:1;
+                    position:relative;
+                    transition: 0.5s;
+                    &:hover{
+                        border:5px solid #8B6AFC;
+                        transition: 0.5s;
+                    }
+                    &:before {
+                        position:absolute;
+                        top:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                     &:after {
+                        position:absolute;
+                        bottom:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                }
+                &_right{
+                    display: block;
+                    width: 100%;
+                    height: 304px;
+                    border: 5px solid rgba(15, 18, 23, 0.2);
+                    z-index:1;
+                    position:relative;
+                    transition: 0.5s;
+                    &:hover{
+                        border:5px solid #8B6AFC;
+                        transition: 0.5s;
+                    }
+                    &:before {
+                        position:absolute;
+                        top:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                     &:after {
+                        position:absolute;
+                        bottom:-10px;
+                        left:10%;
+                        content:"";
+                        display:block;
+                        height:10px;
+                        width:80%;
+                        background:#F8F8F8;
+                     }
+                }
+            }
+        }
+    }
+    
+    .footer{
+        background-color:#0F1217;
+        height: auto;
+        &__divider{
+            display:block;
+            width: 100%;
+            background-color: white;
+            height: 1px;
+            margin-top:55px;
+            margin-bottom:20px;
+        }
+        &__connect{
+                padding-top:55px;
+                display: flex;
+                justify-content:space-between;
+                flex-direction: column;
+            &-block{
+                &-title{
+                    font-family:'SourceCodePro';
+                    font-size: 36px;
+                    line-height: 46px;
+                    color: white;
+                    font-weight: 500;
+                    text-align: left;
+                    width: 100%;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: #FFFFFF;
+                    width: 100%;
+                    line-height: 34px;
+                    margin-top: 22px;
+                }
+            }
+            &-button{
+                display: flex;
+                border: 1px solid white;
+                height: 106px;
+                margin-top: 55px;
+                padding: 0px 100px 0px 100px;
+                align-items: center;
+                transition: 0.3s;
+                &-txt{
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 16px;
+                    text-align: center;
+                    letter-spacing: 0.0357143em;
+                    text-transform: uppercase;
+                    color: white;
+                    transition: 0.3s;
+                }
+                &-pic{
+                    margin-left:14px;
+                }
+                .footer__connect-button-pic_blue{
+                    display: none;
+                    transition: 0.3s;
+                }
+                &:hover{
+                    transition: 0.3s;
+                    border: 1px solid #8B6AFC;
+                    .footer__connect-button-txt{
+                        color: #8B6AFC;
+                        transition: 0.3s;
+                    }
+                    .footer__connect-button-pic{
+                        display: none;
+                    }
+                    .footer__connect-button-pic_blue{
+                        margin-left:14px;
+                        display: block;
+                        transition: 0.3s;
+                    }
+                }
+            }
+        }
+        &__content{
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            flex-direction: column;
+            &-logo{
+                margin-bottom: 50px;
+                text-align: center;
+                &-pic{
+                    width: 50px;
+                    height: 50px;
+                }
+                &-txt{
+                    font-family:'SourceCodePro';
+                    font-weight: 400;
+                    color: #FFFFFF;
+                    line-height: 34px;
+                }
+            }
+            &-menu{
+                padding: 0px;
+                margin: 0px;
+                list-style: none;
+                margin-bottom: 25px;
+                &-item{
+                    display: inline-block;
+                    margin-bottom: 15px;
+                    &-link{
+                        &-pic{
+                            transition: 0.3s;
+                            opacity: 0;
+                        }
+                        &:hover{
+                            .footer__content-menu-item-link-pic{
+                                transition: 0.3s;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+            &-buttons{
+                margin-top: 55px;
+                display: flex;
+                align-items: center;
+                padding-bottom: 55px;
+                &-mail{
+                    width: 48px;
+                    height: 48px;
+                    border: 1px solid white;
+                    border-radius:50%;
+                    margin-right: 40px;
+                    transition: 0.3s;
+                    &:hover{
+                        transition: 0.3s;
+                        border: 1px solid #8B6AFC;
+                        background-color: #8B6AFC;
+                    }
+                }
+                &-telegramm{
+                    width: 48px;
+                    height: 48px;
+                    border: 1px solid white;
+                    border-radius:50%;
+                    transition: 0.3s;
+                    &:hover{
+                        transition: 0.3s;
+                        border: 1px solid #8B6AFC;
+                        background-color: #8B6AFC;
+                    }
+                }
+            }
+        }
+    }
+}
+
+

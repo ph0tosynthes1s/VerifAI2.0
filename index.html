@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="src/styles/style.css" />
+    <link rel="icon" type="image/svg" href="/src/img/logo.svg"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollToPlugin.min.js"></script>
+    <script src="/src/js/main.js"></script>
+    <title>VerifAI</title>
+  </head>
+  <body>
+    <!-- <div class="header__menu-mobile">
+        <div class="header__menu-mobile-top">
+            <div class="header__menu-mobile-top__logo">
+                <img src="/src/img/logo.svg" alt="" class="header__logo-src">
+            </div>
+            <div class="header__menu-mobile-top__closer">
+
+            </div>
+        </div>
+        <ul class="header__menu-list_mobile">
+            <li class="header__menu-item_mobile">
+                <a href="#main" class="header__menu-item-link">
+                    Home
+                </a>
+            </li>
+            <li class="header__menu-item_mobile">
+                <a href="#about" class="header__menu-item-link">
+                    About
+                </a>
+            </li>
+            <li class="header__menu-item_mobile">
+                <a href="#app" class="header__menu-item-link">
+                    App
+                </a>
+            </li>
+            <li class="header__menu-item_mobile">
+                <a href="#documentation" class="header__menu-item-link">
+                    Documentation
+                </a>
+            </li>
+            <li class="header__menu-item_mobile">
+                <a href="#contacts" class="header__menu-item-link">
+                    Contacts
+                </a>
+            </li>
+        </ul>
+    </div> -->
+    <header class="header">
+        <div class="container container_header">
+            <a href="#main" class="header__logo">
+                <img src="/src/img/logo.svg" alt="" class="header__logo-src">
+            </a>
+            <ul class="header__menu">
+                <li class="header__menu-item">
+                    <a href="#main" class="header__menu-item-link">
+                        <img src="/src/img/arrow_white.svg" alt="" class="header__menu-item-link-pic">
+                        Home
+                    </a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="#about" class="header__menu-item-link">
+                        <img src="/src/img/arrow_white.svg" alt="" class="header__menu-item-link-pic">
+                        About
+                    </a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="#app" class="header__menu-item-link">
+                        <img src="/src/img/arrow_white.svg" alt="" class="header__menu-item-link-pic">
+                        App
+                    </a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="#documentation" class="header__menu-item-link">
+                        <img src="/src/img/arrow_white.svg" alt="" class="header__menu-item-link-pic">
+                        Documentation
+                    </a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="#contacts" class="header__menu-item-link">
+                        <img src="/src/img/arrow_white.svg" alt="" class="header__menu-item-link-pic">
+                        Contacts
+                    </a>
+                </li>
+            </ul>
+            <!-- <div class="header__menu-button">
+                <span class="header__menu-button_line"></span>
+                <span class="header__menu-button_line"></span>
+                <span class="header__menu-button_line"></span>
+            </div> -->
+        </div>
+    </header>
+    <section class="main" id="main">
+        <div class="container">            
+            <div class="main__content">
+                <h1 class="main__content-title">
+                    Trust <br>
+                    but <span class="main__content-title-span">
+                        VERIF<span class="main__content-title-span main__content-title-letter_before">Y</span><span class="main__content-title-span main__content-title-letter_after">A</span><span class="main__content-title-span main__content-title-letter_after">I</span>
+                    </span> 
+                </h1>
+                <img src="/src/img/robot.png" alt="" class="main__content-robot">
+            </div>
+            <div class="main__bottom">
+                <button class="main__bottom-button">
+                    <p class="main__bottom-button-txt">Scroll down to see more</p>
+                    <img src="/src/img/scroll.svg" alt="" class="main__bottom-button-src">
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about">
+        <div class="container">
+            <h1 class="about__title">About Us</h1>
+            <div class="about__content">
+                <img src="/src/img/AI.png" alt="" class="about__content-pic">
+                <p class="about__content-txt"><br>VerifAI is a project aimed at the development of a cutting-edge technology for searching and verifying information about individuals on the global network. With the ever-increasing amount of information available online, it has become increasingly difficult to accurately verify the authenticity of an individual's identity, making it a struggle for businesses, governments and organizations to reliably operate. <br>
+                    <br>
+                    VerifAI's comprehensive approach to identity verification is a powerful tool for organizations that want to validate identities in the most efficient and complete way possible.</p>
+            </div>
+        </div>
+    </section>
+    <section class="app" id="app">
+        <div class="container">
+            <h1 class="app__title">
+                The APP
+            </h1>
+            <img src="/src/img/hand.png" alt="" class="app__hand">
+            <div class="app__content">
+                <div class="app__left">
+                    <div class="app__content-block">
+                        <h1 class="app__content-block-title">How it works?</h1>
+                        <p class="app__content-block-txt">The multi-agent system checks the presence of the specified identifier (login or phone number) of the user on various platforms and returns the result</p>
+                    </div>
+                    <div class="app__content-block">
+                        <h1 class="app__content-block-title">Do you want to try?</h1>
+                        <p class="app__content-block-txt">You can use the "Free Trial" version or choose the desired tariff</p>
+                    </div>
+                    <button class="app__content-button">
+                        <p class="app__content-button-txt">Free trial</p>
+                        <img src="/src/img/arrow_white.svg" alt="" class="app__content-button-pic-white">
+                        <img src="/src/img/arrow.svg" alt="" class="app__content-button-pic">
+                    </button>
+                </div>
+                <div class="app__right">
+                    <div class="app__content-bullet app__content-bullet_top">
+                        <div class="app__content-bullet-content">
+                            <h2 class="app__content-bullet-content-title">1</h2>
+                            <p class="app__content-bullet-content-txt">Fast verification speed</p>
+                        </div>
+                    </div>
+                    <div class="app__content-bullet app__content-bullet_middle">
+                        <div class="app__content-bullet-conten ">
+                            <h2 class="app__content-bullet-content-title">2</h2>
+                            <p class="app__content-bullet-content-txt">Complete confidentiality</p>
+                        </div>
+                    </div>
+                    <div class="app__content-bullet app__content-bullet_bottom">
+                        <div class="app__content-bullet-content">
+                            <h2 class="app__content-bullet-content-title">3</h2>
+                            <p class="app__content-bullet-content-txt">Quality support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="documentation" id="documentation">
+        <div class="container">
+            <div class="documentation__block">
+                <div class="documentation__block-content">
+                    <h1 class="documentation__block-content-title">Our documentation</h1>
+                    <p class="documentation__block-content-txt">If you need our documentation, then the open version of the documentation is located at this link:</p>
+                    <button class="documentation__block-content-button">
+                        <p class="documentation__block-content-button-txt">IT’s here</p>
+                        <img src="/src/img/arrow_white.svg" alt="" class="documentation__block-content-button-pic">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="tariff" id="tariff">
+        <div class="container">
+            <h1 class="tariff__title">Tariff plans</h1>
+            <p class="tariff__txt">Here are the tariff plans of the project, where you can choose the right one for your goals:</p>
+            <div class="tariff__plans" id="tariff-items">
+                <div class="tariff__plans-items tariff__plans-items_left">
+                    <h1 class="tariff__plans-items-title">20$ / month</h1>
+                    <p class="tariff__plans-items-txt">Unlimited number of checks and a full user report</p>
+                    <button class="tariff__plans-items-button">take</button>
+                </div>
+                <div class="tariff__plans-items tariff__plans-items_middle">
+                    <h1 class="tariff__plans-items-title">0,3$ / check</h1>
+                    <p class="tariff__plans-items-txt">Unlimited number of checks at the exact cost</p>
+                    <button class="tariff__plans-items-button">take</button>
+                </div>
+                <div class="tariff__plans-items tariff__plans-items_right">
+                    <h1 class="tariff__plans-items-title">Free trial</h1>
+                    <p class="tariff__plans-items-txt">10 test checks via our telegram bot</p>
+                    <button class="tariff__plans-items-button">take</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer" id="contacts">
+        <div class="container">
+            <div class="footer__connect">
+                <div class="footer__connect-block">
+                    <h1 class="footer__connect-block-title">Not sure about the tariff plan or still have questions?</h1>
+                    <p class="footer__connect-block-txt">Our support team will be happy to solve all your problems!</p>
+                </div>
+                <button class="footer__connect-button">
+                    <p class="footer__connect-button-txt">Let’s chat</p>
+                    <img src="/src/img/arrow_white.svg" alt="" class="footer__connect-button-pic">
+                    <img src="/src/img/arrow.svg" alt="" class="footer__connect-button-pic_blue">
+                </button>
+            </div>
+            <span class="footer__divider"></span>
+            <div class="footer__content">
+                <div class="footer__content-logo">
+                    <img src="/src/img/logo.svg" alt="" class="footer__content-logo-pic">
+                    <p class="footer__content-logo-txt">Trust but verify</p>
+                </div>
+                <ul class="footer__content-menu">
+                    <li class="footer__content-menu-item">
+                        <a href="#main" class="footer__content-menu-item-link">
+                            <img src="/src/img/arrow_white.svg" alt="" class="footer__content-menu-item-link-pic">
+                            Home
+                        </a>
+                    </li>
+                    <li class="footer__content-menu-item">
+                        <a href="#about" class="footer__content-menu-item-link">
+                            <img src="/src/img/arrow_white.svg" alt="" class="footer__content-menu-item-link-pic">
+                            About
+                        </a>
+                    </li>
+                    <li class="footer__content-menu-item">
+                        <a href="#app" class="footer__content-menu-item-link">
+                            <img src="/src/img/arrow_white.svg" alt="" class="footer__content-menu-item-link-pic">
+                            App
+                        </a>
+                    </li>
+                </ul>
+                <ul class="footer__content-menu">
+                    <li class="footer__content-menu-item">
+                        <a href="#documentation" class="footer__content-menu-item-link">
+                            <img src="/src/img/arrow_white.svg" alt="" class="footer__content-menu-item-link-pic">
+                            Documentation
+                        </a>
+                    </li>
+                    <li class="footer__content-menu-item">
+                        <a href="#tariff" class="footer__content-menu-item-link">
+                            <img src="/src/img/arrow_white.svg" alt="" class="footer__content-menu-item-link-pic">
+                            Tariff plans
+                        </a>
+                    </li>
+                    <li class="footer__content-menu-item">
+                        <a href="#contacts" class="footer__content-menu-item-link">
+                            <img src="/src/img/arrow_white.svg" alt="" class="footer__content-menu-item-link-pic">
+                            Contacts
+                        </a>
+                    </li>
+                </ul>
+                <div class="footer__content-buttons">
+                    <button class="footer__content-buttons-mail">
+                        <img src="/src/img/mail.svg" alt="" class="footer__content-buttons-mail-pic">
+                    </button>
+                    <button class="footer__content-buttons-telegramm">
+                        <img src="/src/img/telegram.svg" alt="" class="footer__content-buttons-telegramm-pic">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+  </body>
+</html>
